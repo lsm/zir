@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/html"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="layout.html" />
+  <head>
+    <title>360Gantt Chart Summary</title>
+  </head>
+  <body>
+    <!-- <div id="ctxtnav" class="nav"></div> -->
+    <div id="content">
+        <h1>Gantt charts for Milestones</h1>
+        <div>
+          <py:for each="m in milestones">
+          <li style="margin-left:30px;">
+            <a href="${href.qgantt('group/milestone/' + m[0])}">${m[0]}</a>
+          </li>
+          </py:for>
+        </div>
+
+        <h1>Gantt charts for Components</h1>
+        <div>
+          <py:for each="c in components">
+          <li style="margin-left:30px;">
+            <a href="${href.qgantt('group/component/' + c[0])}">${c[0]}</a>
+            <span>Owner: ${c[1]}</span>
+          </li>
+          </py:for>
+        </div>
+
+    </div>
+  </body>
+</html>

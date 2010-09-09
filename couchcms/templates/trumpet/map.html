@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>Google 地图 JavaScript API 示例: 简单的地图</title>
+        <link href="http://dev.360quan.com/laba/css/style.css" rel="stylesheet"/>
+        <script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAV7einO9KLd0kZb3r9G12uhSs1HdZXw7bpK2W3x7kSwTOB0LmGxQpauwRkOBIKvdSWtQIeQLiUf9TQQ&hl=zh-CN" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://dev.360quan.com/js/pl08.js">
+        </script>
+        <SCRIPT TYPE="text/javascript" SRC="http://ajax.googleapis.com/ajax/libs/dojo/1.2/dojo/dojo.xd.js">
+        </SCRIPT>
+        <script type="text/javascript" src="http://dev.360quan.com/laba/js/trumpet.js">
+        </script>
+    </head>
+    <body onload="initialize()" onunload="GUnload()">
+        <div id="container">
+            <div id="map_canvas" style="width: 640px; height: 480px; float:left;">
+            </div>
+            <div id="speaker_sizer">
+                <h3>Choose speaker size:</h3>
+                <div>
+                    <a href="#small" onclick="setSpeakerSize(speakerSize.small, 4, this);" style="font-size: 16px;">)))</a>
+                    <a href="#middle" onclick="setSpeakerSize(speakerSize.middle, 3, this);" style="font-size: 26px;">)))</a>
+                    <a href="#big" onclick="setSpeakerSize(speakerSize.big, 2, this);" style="font-size: 42px;">)))</a>
+                    <a id="speaker_huge" href="#huge" onclick="setSpeakerSize(speakerSize.huge, 1, this);" style="font-size: 58px;">)))</a>
+                </div>
+            </div>
+            <div id="speaker">
+                <form id="speaker_form" name="speaker_form" action="http://dev.360quan.com/trumpet/save/" method="post">
+                    <div>
+                        <p>
+                            Your name:
+                        </p>
+                        <input id="your_name" name="author" type="text" size="20"/>
+                    </div>
+                    <div>
+                        <p>
+                            Shout to:
+                        </p>
+                        <input id="shout_to" name="regions" type="text" size="20"/>
+                    </div>
+                    <div>
+                        <p>
+                            about:
+                        </p>
+                        <textarea id="shout_content" name="content" cols="18" rows="10"></textarea>
+                    </div>
+                    <div style="clear:both;">
+                    </div>
+                    <div class="button" onclick="submitForm();">
+                            Post
+                    </div>
+                </form>
+            </div>
+            <div id="log">
+            </div>
+            <div id="log_res">
+            </div>
+            <div style="clear:both"></div>
+            <div id="display">
+                <ul id="displayUL">
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

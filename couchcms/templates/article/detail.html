@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <p>
+        Posted by <b><a href="/blog/author/{{ post.author }}/">{{ post.author }}</a></b>
+        at <b>{{ post.published }}</b>
+        in <b><a href="/blog/type/{{ post.type }}/">{{ post.type }}</a></b>
+    </p>
+    <p>Operations: <a href="/blog/delete/{{ post.id }}/">Delete</a></p>
+{% endblock %}

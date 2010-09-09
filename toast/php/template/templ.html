@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>{page_title}</title>
+	</head>
+	<style>
+		.menu {
+			font-family: Tahoma, sans-serif;
+			font-size:12;
+			text-align: center;
+		}
+		a {text-decoration:none;}
+		menu,a{color:white;}
+
+	</style>
+	<body>
+		<!-- here we load nested template and put it in 2 places on page -->
+		<!-- LOAD TMENU menu.html -->
+		{TMENU}
+		<p>Today: {today}</p>
+
+		<!-- BEGIN TABLE -->
+		<table border=1>
+			<tr>
+			<!-- BEGIN THEAD -->
+			<th colspan =5>{table_header}</th>	
+			<!-- END THEAD -->
+			</tr>
+			<!-- BEGIN ROW -->
+			<tr>
+				<!-- BEGIN CELL -->
+				<td>{cell_text}</td>
+				<!-- END CELL -->
+			</tr>
+			<!-- END ROW -->
+			
+		</table>
+		<!-- END TABLE -->
+		<br>
+		{TMENU}
+	</body>
+</html>

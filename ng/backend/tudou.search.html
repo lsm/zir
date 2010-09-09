@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Language" content="zh-CN"/>
+	<title>搜索视频：wow - 土豆网 视频搜索 在线观看</title>
+
+	<meta name="Keywords" content="土豆网,播客,视频,视频下载,美女视频,在线视频,免费视频,自拍,视频教学,网络视频,视频交友,搞笑视频,播客网站,视频短片"/>
+	<meta name="Description" content="土豆网是你会喜欢的个人视频网站，免费无限空间，上传你的视频，观看海量视频节目，收藏你喜欢的视频，订阅你关注的播客，简单方便地分享给你的朋友们。土豆热爱原创，每个人都是生活的导演，戴上土豆面具，每个人都是明星。"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	<!--
+	<link href="http://ui.tudou.com/skin/__g/__g_15.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="http://ui.tudou.com/skin/_search/_search_12.css" rel="stylesheet" type="text/css" media="all" />
+	-->
+	<script TYPE="text/javascript" src="http://lo/js/lib/dojo/1.2.0/dojo/dojo.js.uncompressed.js"></script>
+	<!--<SCRIPT TYPE="text/javascript" SRC="http://ajax.googleapis.com/ajax/libs/dojo/1.2.0/dojo/dojo.xd.js"></SCRIPT>-->
+
+<script type="text/javascript">
+dojo.addOnLoad(function(){
+	dojo.forEach(dojo.query('.search_result .inner'),
+		     function(item, idx, arr){
+			console.debug(item);
+			});
+});
+
+</script>
+</head>
+
+<body>
+	<div class="wrapper" id="global">
+
+		<!-- 头部与导航 -->
+
+
+<div id="globalTop">    <div class="header">        <div class="logo"><a href="http://www.tudou.com">土豆网</a></div>        <div class="quicklink nav_login">            <span class="quicklink_login">                <a href="http://login.tudou.com/reg.do" title="注册">注册</a> |                 <a 		href="http://login.tudou.com/login.do?service=http://www.tudou.com/&noreg=ok"				>登录</a>            </span> |            <a href="http://www.tudou.com/playlist/played/history.do?method=getqui">便利豆单(<span id="quickNum">0</span>)</a> |             <a href="http://www.tudou.com/playlist/played/history.do?method=gethis">看过的</a> | <a href="http://www.tudou.com/service/">土豆客服</a>            <a class="quicklink_upload" href="http://www.tudou.com/my/program/publish.php">上传视频</a>        </div>    </div>    <div class="navi">        <div class="nav_inner">            <div class="nav_primary">                <ul>                    <li class="nav_first nav_current"><a href="http://www.tudou.com/">首页</a></li>                    <li ><a href="http://programs.tudou.com/">排行</a></li>                    <li ><a href="http://www.tudou.com/playlist/list.do">豆单</a></li>                    <li id="navChannel" class="nav_dropdown " >                        <a href="http://channels.tudou.com/" class="nav_dropdown_root">频道</a>                                                <div class="nav_sub shadow_box">                            <div class="shadow_box_bg">                                <ul class="shadow_box_inner">                                    <li class="nav_current"><a href="http://channels.tudou.com/">全部</a></li>                                    <li><a href="http://imake.tudou.com/">创作</a></li>                                    <li><a href="http://ent.tudou.com/">娱乐</a></li>                                    <li><a href="http://life.tudou.com/">生活</a></li>                                    <li><a href="http://fun.tudou.com/">搞笑</a></li>                                    <li><a href="http://cartoon.tudou.com/">动画</a></li>                                    <li><a href="http://game.tudou.com/">游戏</a></li>                                    <li><a href="http://lady.tudou.com/">女性</a></li>                                    <li><a href="http://shop.tudou.com/">商品</a></li>                                    <li><a href="http://music.tudou.com/">音乐</a></li>                                    <li><a href="http://sport.tudou.com/">体育</a></li>                                    <li><a href="http://edu.tudou.com/">科教</a></li>                                    <li><a href="http://movie.tudou.com/">影视</a></li>                                    <li><a href="http://etc.tudou.com/">其他</a></li>                                </ul>                            </div>                        </div>                    </li><li><a href="http://hd.tudou.com/">黑豆</a><span class="beta">beta</span></li>                </ul>            </div>                    <div class="nav_secondary">                <ul>                    <li class="nav_first nav_dropdown" id="navMy">                        <a href="http://www.tudou.com/my/setting/" class="nav_dropdown_root">我的</a>                        <div class="nav_sub shadow_box">                            <div class="shadow_box_bg">                                <ul class="shadow_box_inner">                                    <li class="nav_current"><a href="http://www.tudou.com/my/setting/">我的主页</a></li>                                    <li ><a href="http://www.tudou.com/playlist/index.do?method=intro&list=imy">我的视频</a></li>                                    <li ><a href="http://www.tudou.com/playlist/index.do?method=intro">我的豆单</a></li>                                    <li><a href="http://www.tudou.com/my/sub/">我的订阅</a></li>                                    <li><a href="http://www.tudou.com/my/friends/">我的好友</a></li>                                    <li ><a href="http://dtag.tudou.com/mywiki.do?view_type=myupdate">我的标签</a></li>                                    <li><a href="http://www.tudou.com/my/album/">我的相册</a></li>                                    <li><a href="http://www.tudou.com/my/diarys/manage.php">我的日志</a></li>                                    <li><a href="http://www.tudou.com/my/soft/">我的软件</a></li>                                </ul>                            </div>                        </div>                    </li>                    <li><a href="http://www.tudou.com/album/">相册</a></li>                    <li><a href="http://www.tudou.com/groups/">小组</a></li>                    <li><a href="http://www.tudou.com/community/">播客</a></li>                    <li ><a href="http://tag.tudou.com/">标签</a></li>                </ul>            </div>                        <div class="nav_search">                <div class="diyselect">                   <input type="button" value="视频"/>                    <ul>                        <li class="diyselect_current"><a href="http://so.tudou.com/isearch.do">视频</a></li>                      <li ><a href="http://so.tudou.com/psearch.do">豆单</a></li>                      <li ><a href="http://so.tudou.com/usearch.do">播客</a></li>                        <li><a href="http://www.google.cn/search" target="_blank">网页</a></li>                    </ul>                </div>                <form  method="get" action="isearch.do" class="nav_searchform" searchtype="">                    <input type="text" accesskey="s" value="wow" class="nav_search_input" name="kw" />                    <input type="submit" value="搜索" class="nav_search_submit"/>                </form>                    <label>                        <input type="hidden" name="client" value="aff-tudou"/>                        <input type="hidden" name="channel" value="search"/>                    </label>            </div>                                              </div>    </div>	</div>
+		<!-- 页面主体 -->
+
+		<div class="page_content">
+
+			<div class="frame frame_2cols">
+
+				<!-- 主栏 -->
+				<div class="main_col">
+					<div class="search_info">
+												<h1>在全部频道中搜索“<em><a href='http://tag.tudou.com/wow' target='_blank' title='wow'>wow</a></em>”,找到相关视频 <em>6545</em> 个</h1>
+
+																			<p>
+        					相关搜索：
+        					                        	                        		<a href="isearch.do?kw=魔兽世界&display=album&f=2">魔兽世界</a>
+							                        		<a href="isearch.do?kw=wow搞笑&display=album&f=2">wow搞笑</a>
+							                        		<a href="isearch.do?kw=法师&display=album&f=2">法师</a>
+							                        		<a href="isearch.do?kw=魔兽&display=album&f=2">魔兽</a>
+							                        		<a href="isearch.do?kw=盗贼&display=album&f=2">盗贼</a>
+
+							                        		<a href="isearch.do?kw=wow猎人&display=album&f=2">wow猎人</a>
+							                        		<a href="isearch.do?kw=wlk&display=album&f=2">wlk</a>
+							                        		<a href="isearch.do?kw=wowpk&display=album&f=2">wowpk</a>
+							                        		<a href="isearch.do?kw=wow dz&display=album&f=2">wow dz</a>
+														</p>
+																															<a href="http://www.google.cn/search?q=wow&client=aff-tudou&channel=search" class="search_google" target="_blank">在google上搜索相关结果</a>
+
+					</div>
+
+
+					     					<div class="search_hd">
+    						<div class="heading">
+								<h2><em><a href="http://hd.tudou.com/" target='_blank'>黑豆高清视频</a></em>中搜索<em>wow</em>结果:</h2>
+    							<span><a href="http://so.hd.tudou.com/hd.do?kw=wow" target='_blank'>更多</a></span>
+    						</div>
+    						<div class="container fix">
+
+    							<div class="showcase">
+									        								<div class="pack pack_video_card">
+        									<div class="pic">
+        										<a href="http://hd.tudou.com/program/4452/" title="无间道不道-第080201集" target='_blank' class="inner">
+        											<img src="http://i01.img.tudou.com/data/imgs/i/021/158/054/m20.jpg" alt="无间道不道-第080201集" width="120" height="90" />
+        										</a>
+        									</div>
+        									<div class="txt">
+												        										<h6 class="caption"><a target="_blank" href="http://hd.tudou.com/program/4452/" title="无间道不道-第080201集">无间道不道-第080</a></h6>
+
+        									</div>
+        								</div>
+									    							</div>
+    						</div>
+    					</div>
+
+						<div class="tab tab_1">
+    						<ul>
+    							<li><a href="" class="active">视频</a></li>
+    							<li><a href="psearch.do?kw=wow">豆单</a></li>
+
+    						</ul>
+							    							<div class="chg_layout">
+    								<span>显示方式：</span>
+    								    								        								<a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&page=1&display=table" class="layout_list" title="列表方式">列表</a>
+        								<a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&page=1&display=album"  class="layout_showcase current" title="相册方式">相册</a>
+    								    							</div>
+							    					</div>
+
+    					<div class="search_filter">
+
+    						<form action="isearch.do" method="get">
+    							<input type="text" class="text" value='wow' name='kw' maxlength="40"/>
+    							<input type="submit" value="搜索"  class="btn_search_filter" />
+    							<label><input type="checkbox" class="checkbox" id='high' value='1' /> 高清</label>
+    							<input type="hidden" value='' name='cid' />
+								<input type="hidden" value='' name='time' />
+								<input type="hidden" value='' name='sort' />
+								<input type="hidden" value='0' name='high' id='hd_video' />
+
+								<input type="hidden" value='album' name='display' />
+								<div class="filter_panel">
+    								<div class="combo_box">
+																				    									<div>精确匹配↓</div>
+    									<ul>
+    										                        																														<li><a href="isearch.do?kw=wow&cid=&time=&sort=play&high=0&display=album">播放次数↓</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=&time=&sort=date&high=0&display=album">上传时间↓</a></li>
+
+																																																<li><a href="isearch.do?kw=wow&cid=&time=&sort=duration&high=0&display=album">视频时长↓</a></li>
+																																														    									</ul>
+    								</div>
+
+    								<div class="combo_box">
+																				    									<div>时间范围</div>
+    									<ul>
+    										                        																	                            						<li><a href="isearch.do?kw=wow&cid=&time=7&sort=&high=0&display=album">一周内</a></li>
+
+																																			                            						<li><a href="isearch.do?kw=wow&cid=&time=30&sort=&high=0&display=album">一月内</a></li>
+																																		    									</ul>
+    								</div>
+
+    								<div class="combo_box">
+																				    									<div>选择频道</div>
+    									<ul>
+											                        																														<li><a href="isearch.do?kw=wow&cid=99&time=&sort=&high=0&display=album">创作</a></li>
+
+																																																<li><a href="isearch.do?kw=wow&cid=1&time=&sort=&high=0&display=album">娱乐</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=14&time=&sort=&high=0&display=album">音乐</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=22&time=&sort=&high=0&display=album">影视</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=5&time=&sort=&high=0&display=album">搞笑</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=9&time=&sort=&high=0&display=album">动画</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=10&time=&sort=&high=0&display=album">游戏</a></li>
+
+																																																<li><a href="isearch.do?kw=wow&cid=12&time=&sort=&high=0&display=album">商品</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=15&time=&sort=&high=0&display=album">体育</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=3&time=&sort=&high=0&display=album">生活</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=21&time=&sort=&high=0&display=album">科教</a></li>
+																																																<li><a href="isearch.do?kw=wow&cid=23&time=&sort=&high=0&display=album">其他</a></li>
+																																		    									</ul>
+
+    								</div>
+    							</div>
+    						</form>
+    					</div>
+
+												<div class="box search_result">
+
+    						<div class="container">
+
+    <div class="showcase showcase_1">
+							            						<div class="row">
+				            		<div class="item">
+            			<div class="pack pack_video_card">
+
+            				<div class="pic">
+        						<a class="inner" target="new" title="WOW" href="http://www.tudou.com/programs/view/OjVv37p79zo/">
+        							<img width="120" height="90" class="pack_clipImg" alt="WOW" src="http://i01.img.tudou.com/data/imgs/i/022/491/257/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="WOW" href="http://www.tudou.com/programs/view/OjVv37p79zo/" target="new"><span class='highlight'>WOW</span></a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 05:11</li>
+            						<li>播客: <a title="洛丹伦公主" href="http://www.tudou.com/home/xingxiyang/" target='_blank'>洛丹伦公主</a>
+    									    								</li>
+
+            						<li>播放: 664</li>
+            						<li>上传于: 2008-10-05</li>
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+
+            				<div class="pic">
+        						<a class="inner" target="new" title="MY WOW" href="http://www.tudou.com/programs/view/QeSuqqXy5wA/">
+        							<img width="120" height="90" class="pack_clipImg" alt="MY WOW" src="http://i01.img.tudou.com/data/imgs/i/022/634/542/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="MY WOW" href="http://www.tudou.com/programs/view/QeSuqqXy5wA/" target="new">MY <span class='highlight'>WOW</span></a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 01:56</li>
+
+            						<li>播客: <a title="嚣张魅力" href="http://www.tudou.com/home/cruiser0315/" target='_blank'>嚣张魅力</a>
+    									    								</li>
+            						<li>播放: 919</li>
+            						<li>上传于: 2008-10-11</li>
+
+            					</ul>
+            				</div>
+            			</div>
+
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="wow" href="http://www.tudou.com/programs/view/g16iZtg4qNY/">
+        							<img width="120" height="90" class="pack_clipImg" alt="wow" src="http://i01.img.tudou.com/data/imgs/i/013/774/237/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="wow" href="http://www.tudou.com/programs/view/g16iZtg4qNY/" target="new"><span class='highlight'>wow</span></a>
+    								    							</h6>
+            					<ul class="info">
+
+									<li>时长: 04:33</li>
+            						<li>播客: <a title="乐林文化" href="http://www.tudou.com/home/yuelinwenhua/" target='_blank'>乐林文化</a>
+    									<a title="更多豆角儿" target="_blank" href="http://www.tudou.com/my/dj">
+												<img alt="豆角儿!" class="sprite sprite_director" src="http://ui.tudou.com/skin/__g/img/sprite_0.gif"/></a>
+    									    								</li>
+            						<li>播放: 34516</li>
+            						<li>上传于: 2008-01-21</li>
+
+									                            				<li><a  class="orange" href="http://www.tudou.com/search/programs/same.php?iid=g16iZtg4qNY" target="_blank">&gt;&gt; 1 个相同视频</a></li>
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="[WOW版]《罪恶都市》片段" href="http://www.tudou.com/programs/view/ZBmnLPdvxXw/">
+
+        							<img width="120" height="90" class="pack_clipImg" alt="[WOW版]《罪恶都市》片段" src="http://i01.img.tudou.com/data/imgs/i/006/768/440/m25.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="[WOW版]《罪恶都市》片段" href="http://www.tudou.com/programs/view/ZBmnLPdvxXw/" target="new">[<span class='highlight'>WOW</span>版]《罪恶都市》片段</a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 03:41</li>
+            						<li>播客: <a title="首丘之狐" href="http://www.tudou.com/home/fox_young/" target='_blank'>首丘之狐</a>
+    									    								</li>
+
+            						<li>播放: 52415</li>
+            						<li>上传于: 2007-06-15</li>
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+									</div>
+							            						<div class="row">
+
+				            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="wow" href="http://www.tudou.com/programs/view/90LYseFc9Bg/">
+        							<img width="120" height="90" class="pack_clipImg" alt="wow" src="http://i01.img.tudou.com/data/imgs/i/022/773/514/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="wow" href="http://www.tudou.com/programs/view/90LYseFc9Bg/" target="new"><span class='highlight'>wow</span></a>
+    								    							</h6>
+            					<ul class="info">
+
+									<li>时长: 00:28</li>
+            						<li>播客: <a title="黑夜孤影" href="http://www.tudou.com/home/61260551/" target='_blank'>黑夜孤影</a>
+    									    								</li>
+            						<li>播放: 31</li>
+            						<li>上传于: 5天前</li>
+
+            					</ul>
+            				</div>
+
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="WOW" href="http://www.tudou.com/programs/view/uEP0HSzaoIk/">
+        							<img width="120" height="90" class="pack_clipImg" alt="WOW" src="http://i01.img.tudou.com/data/imgs/i/022/885/708/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="WOW" href="http://www.tudou.com/programs/view/uEP0HSzaoIk/" target="new"><span class='highlight'>WOW</span></a>
+    								    							</h6>
+
+            					<ul class="info">
+									<li>时长: 18:43</li>
+            						<li>播客: <a title="地狱正天使" href="http://www.tudou.com/home/tly84794426/" target='_blank'>地狱正天使</a>
+    									    								</li>
+            						<li>播放: 0</li>
+            						<li>上传于: 1天前</li>
+
+            					</ul>
+
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="Shake That!-整个WOW在跳舞" href="http://www.tudou.com/programs/view/QzopPCzsuNM/">
+        							<img width="120" height="90" class="pack_clipImg" alt="Shake That!-整个WOW在跳舞" src="http://i01.img.tudou.com/data/imgs/i/006/527/854/m10.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="Shake That!-整个WOW在跳舞" href="http://www.tudou.com/programs/view/QzopPCzsuNM/" target="new">Shake That!-整个<span class='highlight'>WOW</span>在跳舞</a>
+    								    							</h6>
+
+            					<ul class="info">
+									<li>时长: 03:31</li>
+            						<li>播客: <a title="首丘之狐" href="http://www.tudou.com/home/fox_young/" target='_blank'>首丘之狐</a>
+    									    								</li>
+            						<li>播放: 72633</li>
+            						<li>上传于: 2007-06-04</li>
+									                            				<li><a  class="orange" href="http://www.tudou.com/search/programs/same.php?iid=QzopPCzsuNM" target="_blank">&gt;&gt; 1 个相同视频</a></li>
+
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="Paula DeAnda feat Bow Wow - Easy" href="http://www.tudou.com/programs/view/68R51N-GM54/">
+        							<img width="120" height="90" class="pack_clipImg" alt="Paula DeAnda feat Bow Wow - Easy" src="http://i01.img.tudou.com/data/imgs/i/012/873/237/p.jpg"/></a></div>
+            				<div class="txt">
+
+																								            					<h6 class="caption"><a title="Paula DeAnda feat Bow Wow - Easy" href="http://www.tudou.com/programs/view/68R51N-GM54/" target="new">Paula DeAnda feat Bo</a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 03:32</li>
+            						<li>播客: <a title="狁℡皓ざ┅☆" href="http://www.tudou.com/home/314797082xue/" target='_blank'>狁℡皓ざ┅☆</a>
+    									    								</li>
+            						<li>播放: 36987</li>
+
+            						<li>上传于: 2007-12-28</li>
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+									</div>
+							            						<div class="row">
+				            		<div class="item">
+            			<div class="pack pack_video_card">
+
+            				<div class="pic">
+        						<a class="inner" target="new" title="wow" href="http://www.tudou.com/programs/view/nfT6yzZBa-0/">
+        							<img width="120" height="90" class="pack_clipImg" alt="wow" src="http://i01.img.tudou.com/data/imgs/i/017/692/700/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="wow" href="http://www.tudou.com/programs/view/nfT6yzZBa-0/" target="new"><span class='highlight'>wow</span></a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 03:01</li>
+            						<li>播客: <a title="bxrgoshter" href="http://www.tudou.com/home/goshter/" target='_blank'>bxrgos</a>
+    									    								</li>
+
+            						<li>播放: 376</li>
+            						<li>上传于: 2008-05-12</li>
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+
+            				<div class="pic">
+        						<a class="inner" target="new" title="wow之见龙卸甲" href="http://www.tudou.com/programs/view/Xy4l00BkfHs/">
+        							<img width="120" height="90" class="pack_clipImg" alt="wow之见龙卸甲" src="http://i01.img.tudou.com/data/imgs/i/018/557/251/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="wow之见龙卸甲" href="http://www.tudou.com/programs/view/Xy4l00BkfHs/" target="new"><span class='highlight'>wow</span>之见龙卸甲</a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 14:09</li>
+
+            						<li>播客: <a title="149210253" href="http://www.tudou.com/home/149210253/" target='_blank'>149210</a>
+    									    								</li>
+            						<li>播放: 45405</li>
+            						<li>上传于: 2008-06-05</li>
+
+            					</ul>
+            				</div>
+            			</div>
+
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="WOW" href="http://www.tudou.com/programs/view/y13tIGNb7Aw/">
+        							<img width="120" height="90" class="pack_clipImg" alt="WOW" src="http://i01.img.tudou.com/data/imgs/i/021/980/440/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="WOW" href="http://www.tudou.com/programs/view/y13tIGNb7Aw/" target="new"><span class='highlight'>WOW</span></a>
+    								    							</h6>
+            					<ul class="info">
+
+									<li>时长: 14:37</li>
+            						<li>播客: <a title="月光林地" href="http://www.tudou.com/home/hosuktc/" target='_blank'>月光林地</a>
+    									    								</li>
+            						<li>播放: 441</li>
+            						<li>上传于: 2008-09-15</li>
+
+            					</ul>
+            				</div>
+
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="我的WOW" href="http://www.tudou.com/programs/view/A9R0Our2fTg/">
+        							<img width="120" height="90" class="pack_clipImg" alt="我的WOW" src="http://i01.img.tudou.com/data/imgs/i/014/069/405/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="我的WOW" href="http://www.tudou.com/programs/view/A9R0Our2fTg/" target="new">我的<span class='highlight'>WOW</span></a>
+    								    							</h6>
+
+            					<ul class="info">
+									<li>时长: 03:18</li>
+            						<li>播客: <a title="cylovexxl" href="http://www.tudou.com/home/cylovexxl/" target='_blank'>cylove</a>
+    									    								</li>
+            						<li>播放: 24105</li>
+            						<li>上传于: 2008-01-29</li>
+
+            					</ul>
+
+            				</div>
+            			</div>
+            		</div>
+									</div>
+							            						<div class="row">
+				            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="再见WOW" href="http://www.tudou.com/programs/view/q9JMPwIRg_E/">
+        							<img width="120" height="90" class="pack_clipImg" alt="再见WOW" src="http://i01.img.tudou.com/data/imgs/i/020/480/680/p.jpg"/></a></div>
+
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="再见WOW" href="http://www.tudou.com/programs/view/q9JMPwIRg_E/" target="new">再见<span class='highlight'>WOW</span></a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 15:28</li>
+            						<li>播客: <a title="sywtem" href="http://www.tudou.com/home/sywtem/" target='_blank'>sywtem</a>
+    									    								</li>
+
+            						<li>播放: 2518</li>
+            						<li>上传于: 2008-07-28</li>
+
+            					</ul>
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+
+            				<div class="pic">
+        						<a class="inner" target="new" title="adv_animation_wow.avi" href="http://www.tudou.com/programs/view/y_VRYxvJwBY/">
+        							<img width="120" height="90" class="pack_clipImg" alt="adv_animation_wow.avi" src="http://i01.img.tudou.com/data/imgs/i/013/058/210/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="adv_animation_wow.avi" href="http://www.tudou.com/programs/view/y_VRYxvJwBY/" target="new">adv_animation_<span class='highlight'>wow</span>.av</a>
+    								    							</h6>
+            					<ul class="info">
+									<li>时长: 00:10</li>
+
+            						<li>播客: <a title="暗黑王子" href="http://www.tudou.com/home/diabloking/" target='_blank'>暗黑王子</a>
+    									    								</li>
+            						<li>播放: 15103</li>
+            						<li>上传于: 2008-01-02</li>
+									                            				<li><a  class="orange" href="http://www.tudou.com/search/programs/same.php?iid=y_VRYxvJwBY" target="_blank">&gt;&gt; 1 个相同视频</a></li>
+
+            					</ul>
+
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="真人版WOW" href="http://www.tudou.com/programs/view/QdGEOHnwmtA/">
+        							<img width="120" height="90" class="pack_clipImg" alt="真人版WOW" src="http://i01.img.tudou.com/data/imgs/i/022/709/640/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="真人版WOW" href="http://www.tudou.com/programs/view/QdGEOHnwmtA/" target="new">真人版<span class='highlight'>WOW</span></a>
+    								    							</h6>
+
+            					<ul class="info">
+									<li>时长: 01:48</li>
+            						<li>播客: <a title="caiziafeng" href="http://www.tudou.com/home/caiziafeng/" target='_blank'>caizia</a>
+    									    								</li>
+            						<li>播放: 638</li>
+            						<li>上传于: 8天前</li>
+
+            					</ul>
+
+            				</div>
+            			</div>
+            		</div>
+							            	            		<div class="item">
+            			<div class="pack pack_video_card">
+            				<div class="pic">
+        						<a class="inner" target="new" title="WOW盗贼匕首刷怪视频" href="http://www.tudou.com/programs/view/yfYG1pFSUxc/">
+        							<img width="120" height="90" class="pack_clipImg" alt="WOW盗贼匕首刷怪视频" src="http://i01.img.tudou.com/data/imgs/i/022/310/918/p.jpg"/></a></div>
+            				<div class="txt">
+																								            					<h6 class="caption"><a title="WOW盗贼匕首刷怪视频" href="http://www.tudou.com/programs/view/yfYG1pFSUxc/" target="new"><span class='highlight'>WOW</span>盗贼匕首刷怪视频</a>
+    								    							</h6>
+
+            					<ul class="info">
+									<li>时长: 04:45</li>
+            						<li>播客: <a title="灰白鸟" href="http://www.tudou.com/home/feilu729/" target='_blank'>灰白鸟</a>
+    									    								</li>
+            						<li>播放: 1558</li>
+            						<li>上传于: 2008-09-29</li>
+
+            					</ul>
+
+            				</div>
+            			</div>
+            		</div>
+									</div>
+								</div>
+
+									                				                					<div class="page_nav">
+
+
+
+
+
+
+
+	                	<span class="page_nav_prev"><span>上一页</span></span>
+				                	<span class="page_nav_next"><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=2">下一页</a></span>
+        	<ul>
+                			    	    		<li class="page_nav_current">1</li>
+
+    		    	    		<li><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=2">2</a></li>
+    		    	    		<li><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=3">3</a></li>
+    		    	    		<li><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=4">4</a></li>
+    		    	    		<li><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=5">5</a></li>
+    		        					<li><abbr>...</abbr></li>
+
+			<li><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=409">409</a></li>
+
+	    <li><a href="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album&page=410">410</a></li>
+        			</ul>
+
+	<form onsubmit="if(!/^\s*\d+\s*$/.test($('#page').val())) {alert('请输入正确的页码:)');return false;}else{this.action += '&page=' + $('#page').val();}" method="post"
+		action="isearch.do?kw=wow&cid=&time=&sort=&high=0&display=album" class="page_nav_jump">
+		第 <input type="text" size="6" id="page" name="page" class="text" /> 页
+		<input type="submit" value="跳转" class="submit "/>
+		<input type="hidden" name="mpn" value="410" />
+	</form>
+</div>                				    						</div>
+    					</div>
+
+				</div><!-- 主栏 -->
+
+
+				<!-- 侧栏 -->
+				<div class="side_col">
+
+	<!-- 视频广告位 -->
+	<div id="pushlist">
+    	<div class="box" id="feedplayer">
+    		<div id="tplayer"></div>
+    		<ul>
+    			<li id="tarchor"></li>
+
+    			<li id="tcmt"></li>
+    		</ul>
+    	</div>
+	</div>
+
+	<!-- 视频相关信息 -->
+
+	<!-- 推荐精选豆单 -->
+	<div class="box ">
+					<div class="heading"><h2>相关豆单</h2></div>
+
+		    		<div class="container">
+
+    			<ul class="list list_1">
+    				    					<li class="item">
+    						<div class="pack pack_playlist_brief">
+    							<div class="pic"><a href="http://www.tudou.com/playlist/id/42809/" title="WOW"  target='_blank' class="inner">
+    									<img src="http://image1.tudou.com/data/imgs/i/003/567/711/p.jpg" alt="WOW" width="120"
+    										height="90" class="pack_listImg" /></a></div>
+    							<div class="txt">
+    								<h6 class="caption"><a href="http://www.tudou.com/playlist/id/42809/" target='_blank' title="WOW">
+    										    										<span class='highlight'>WOW</span>
+    								</a></h6>
+    								<ul class="info">
+
+    									<li>创建者: <a href="http://www.tudou.com/home/xiaoyaochong/" target="_blank" title='xiaoyaochong'  >xiaoyao</a></li>
+    									<li>播放: 2094</li>
+    									<li>视频数: 4</li>
+    								</ul>
+    							</div>
+    						</div>
+    					</li>
+    				    					<li class="item">
+
+    						<div class="pack pack_playlist_brief">
+    							<div class="pic"><a href="http://www.tudou.com/playlist/id/4346379/" title="wow"  target='_blank' class="inner">
+    									<img src="http://image8.tudou.com/data/imgs/i/003/924/248/m15.jpg" alt="wow" width="120"
+    										height="90" class="pack_listImg" /></a></div>
+    							<div class="txt">
+    								<h6 class="caption"><a href="http://www.tudou.com/playlist/id/4346379/" target='_blank' title="wow">
+    										    										<span class='highlight'>wow</span>
+    								</a></h6>
+    								<ul class="info">
+    									<li>创建者: <a href="http://www.tudou.com/home/m325520/" target="_blank" title='m325520'  >m325520</a></li>
+
+    									<li>播放: 4714</li>
+    									<li>视频数: 24</li>
+    								</ul>
+    							</div>
+    						</div>
+    					</li>
+    				    					<li class="item">
+    						<div class="pack pack_playlist_brief">
+
+    							<div class="pic"><a href="http://www.tudou.com/playlist/id/437210/" title="wow"  target='_blank' class="inner">
+    									<img src="http://image9.tudou.com/data/imgs/i/005/093/569/p.jpg" alt="wow" width="120"
+    										height="90" class="pack_listImg" /></a></div>
+    							<div class="txt">
+    								<h6 class="caption"><a href="http://www.tudou.com/playlist/id/437210/" target='_blank' title="wow">
+    										    										<span class='highlight'>wow</span>
+    								</a></h6>
+    								<ul class="info">
+    									<li>创建者: <a href="http://www.tudou.com/home/slkdkjsii/" target="_blank" title='byaqw'  >byaqw</a></li>
+    									<li>播放: 1114</li>
+
+    									<li>视频数: 2</li>
+    								</ul>
+    							</div>
+    						</div>
+    					</li>
+    				    					<li class="item">
+    						<div class="pack pack_playlist_brief">
+    							<div class="pic"><a href="http://www.tudou.com/playlist/id/2044386/" title="WOW视频音乐"  target='_blank' class="inner">
+    									<img src="http://i01.img.tudou.com/data/imgs/i/014/884/239/p.jpg" alt="WOW视频音乐" width="120"
+    										height="90" class="pack_listImg" /></a></div>
+
+    							<div class="txt">
+    								<h6 class="caption"><a href="http://www.tudou.com/playlist/id/2044386/" target='_blank' title="WOW视频音乐">
+    										    										<span class='highlight'>WOW</span>视频音乐
+    								</a></h6>
+    								<ul class="info">
+    									<li>创建者: <a href="http://www.tudou.com/home/chrismail3/" target="_blank" title='Chris'  >Chris</a></li>
+    									<li>播放: 279292</li>
+    									<li>视频数: 84</li>
+
+    								</ul>
+    							</div>
+    						</div>
+    					</li>
+    				    					<li class="item">
+    						<div class="pack pack_playlist_brief">
+    							<div class="pic"><a href="http://www.tudou.com/playlist/id/2394553/" title="Bow Wow"  target='_blank' class="inner">
+    									<img src="http://image2.tudou.com/data/imgs/i/005/239/652/p.jpg" alt="Bow Wow" width="120"
+    										height="90" class="pack_listImg" /></a></div>
+    							<div class="txt">
+    								<h6 class="caption"><a href="http://www.tudou.com/playlist/id/2394553/" target='_blank' title="Bow Wow">
+    										    										Bow <span class='highlight'>Wow</span>
+    								</a></h6>
+
+    								<ul class="info">
+    									<li>创建者: <a href="http://www.tudou.com/home/coalean/" target="_blank" title='coalean'  >coalean</a></li>
+    									<li>播放: 631</li>
+    									<li>视频数: 6</li>
+    								</ul>
+    							</div>
+    						</div>
+
+    					</li>
+    				    					<li class="item">
+    						<div class="pack pack_playlist_brief">
+    							<div class="pic"><a href="http://www.tudou.com/playlist/id/1207651/" title="WOW"  target='_blank' class="inner">
+    									<img src="http://i01.img.tudou.com/data/imgs/i/007/193/878/p.jpg" alt="WOW" width="120"
+    										height="90" class="pack_listImg" /></a></div>
+    							<div class="txt">
+    								<h6 class="caption"><a href="http://www.tudou.com/playlist/id/1207651/" target='_blank' title="WOW">
+    										    										<span class='highlight'>WOW</span>
+    								</a></h6>
+    								<ul class="info">
+
+    									<li>创建者: <a href="http://www.tudou.com/home/ddneverend/" target="_blank" title='BLLM必须团结'  >BLLM必须团</a></li>
+    									<li>播放: 840</li>
+    									<li>视频数: 2</li>
+    								</ul>
+    							</div>
+    						</div>
+    					</li>
+    				    				<br />
+
+    					<a href="psearch.do?kw=wow" style="text-align:right;color:#f60;">更多豆单...</a>
+    				    			</ul>
+    		</div>
+				<div class="footing"></div>
+	</div>
+	<!-- 推荐精选豆单 -->
+
+	<!-- 最近搜索的关键字 -->
+	<div class="box search_history" style="display:none;">
+
+		<div class="heading fix">
+			<h2>你最近搜索的关键字</h2>
+			<span>
+				<a href="#" id="search_history_on">开启记录</a>
+			</span>
+			<span style="display:none;">
+				<a href="#" id="clear_search_history">清除</a> |
+				<a href="#" id="search_history_off">关闭该功能</a>
+
+			</span>
+		</div>
+		<div class="container intro">
+			<p>土豆帮你记住你曾搜过的关键字，你就不用再次输入了。</p>
+			<p>你的搜索记录只有你能看见，并且仅限于你现在所用的这台电脑。</p>
+			<p>你可以随时清除历史或者关闭该功能。</p>
+		</div>
+
+		<div class="container"></div>
+	</div>
+	<!-- 最近搜索的关键字 -->
+
+	<div class="box td_service">
+		<a href="http://www.tudou.com/service/?type=search" target="_blank">搜索有问题，联系土豆客服，我们来解决</a>
+    </div>
+
+</div>				<!-- 侧栏 -->
+
+			</div><!-- 页面主体 -->
+
+		</div>
+
+
+<!--
+<script src="http://ui.tudou.com/js/lib/jquery_5.js" type="text/javascript" ></script>
+<script src="http://ui.tudou.com/js/_g_60.js" type="text/javascript" ></script>
+<script src="http://ui.tudou.com/js/fn/swfobject2_4.js" type="text/javascript" ></script>
+<script src="http://ui.tudou.com/js/search/search_5.js" type="text/javascript" ></script>
+<script src="http://ui.tudou.com/js/sale_search_14.js" type="text/javascript" ></script>
+
+<script type="text/javascript">
+adExtension.load({
+	main_player: "http://ui.tudou.com/bin/miniplayer_16.swf"
+});
+
+
+</script>
+-->
+
+</div>
+
+<!-- 尾部 -->
+
+<div id="globalBottom">                          <div class="navi">                    <div class="nav_inner">                        <div class="nav_search">                                                    <div class="diyselect">                                <input type="button" value="视频"/>                                <ul>                                     <li class="diyselect_current"><a href="http://so.tudou.com/isearch.do">视频</a></li>                      <li ><a href="http://so.tudou.com/psearch.do">豆单</a></li>                      <li ><a href="http://so.tudou.com/usearch.do">播客</a></li>                                    <li><a href="http://www.google.cn/search" target="_blank">网页</a></li>                                </ul>                            </div>                                        <form  method="get" action="isearch.do" class="nav_searchform">                                <input type="text" accesskey="s" value="wow" class="nav_search_input" name="kw" />                                <input type="submit" value="搜索" class="nav_search_submit"/>                            </form>                                            <label>                                    <input type="hidden" name="client" value="aff-tudou"/>                                    <input type="hidden" name="channel" value="search"/>                                </label>                                                                                    </div>                                  </div>                </div>                            <div class="footer">                            <div class="nav_footer">                    <ul>                        <li class="nav_first"><a href="http://www.tudou.com/aboutus/" target="_blank">About Us</a></li>                        <li><a href="http://www.tudou.com/about/about.php" target="_blank">关于土豆</a></li>                        <li><a href="http://www.tudou.com/about/moreinfo.php" target="_blank">媒体和掌声</a></li>                        <li><a href="http://www.tudou.com/about/agreement.php" target="_blank">使用协议</a></li>                        <li><a href="http://www.tudou.com/about/copyright.php" target="_blank">隐私和版权</a></li>                        <li><a href="http://www.tudou.com/about/contact.php" target="_blank">联系土豆</a></li>                        <li><a href="http://www.tudou.com/about/joinus.php" target="_blank">招贤纳士</a></li>                        <li><a href="http://www.tudou.com/service/" target="_blank">土豆客服</a></li>                    </ul>                </div>                        <div class="copyright">					&copy; 2005-2008 Tudou.com 					<img src="http://ui.tudou.com/skin/__g/img/sprite.gif" class="icp" alt="沪ICP证" />					沪ICP证：<a href="http://ui.tudou.com/skin/__g/img/gov/icp2008.jpg" target="_blank">沪B2-20060077</a>　网络视听许可证：<a href="http://ui.tudou.com/skin/__g/img/gov/license.png" target="_blank">0908301</a>　广播电视节目制作许可证：<a href="http://ui.tudou.com/skin/__g/img/gov/license318.jpg" target="_blank">沪字第318号</a>					<a href="http://www.tudou.com/"><img src="http://ui.tudou.com/skin/__g/img/sprite.gif" class="logo" alt="土豆网" /></a>				</div>            </div>            </div>
+<!--
+<script type="text/javascript" src="http://ui.tudou.com/js/fn/searchint_13.js"></script>
+<script type="text/javascript">
+var _rsCI="cn-adchinaad";
+var _rsCG="bj";
+var _rsDN="//secure-cn.imrworldwide.com/";
+var _rsCC=0;
+var _rsSE=1;
+var _rsSM=1;
+var _rsSS=15;
+var _rsTC=500;
+var _rsCL=1;
+</script>
+<script type="text/javascript" src="//secure-cn.imrworldwide.com/v53.js"></script>
+<noscript>
+<div><img src="//secure-cn.imrworldwide.com/cgi-bin/m?ci=cn-adchinaad&amp;cg=bj" alt=""/></div>
+</noscript>
+-->
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="3724bc50-98fc-b74d-863e-7dd84b9426c9" kpf_version="4" name="ng.kpf">
+<file id="d3a02db6-59f6-d54d-a2dc-6269516ec569" idref="3724bc50-98fc-b74d-863e-7dd84b9426c9" name="tudou-video.html" url="file:///Users/zai/workspace/python/djcode/ng/tudou-video.html">
+</file>
+<preference-set idref="3724bc50-98fc-b74d-863e-7dd84b9426c9">
+  <boolean id="import_live">1</boolean>
+</preference-set>
+</project>

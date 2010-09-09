@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Mootools slider example</title>
+    <script type="text/javascript" src="lib/mootools/mootools.js"></script>
+    <link rel="stylesheet" href="sample_files/_web.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="sample_files/style.css" type="text/css" media="screen">
+
+    <style type="text/css">
+    .mymask{
+        position:relative;
+        height:180px;
+        overflow:hidden;
+    }
+    #mybox{
+        position:absolute;
+    }
+    #mybox span{
+        display:block;
+        padding-top:5px;
+        float:left;
+    }
+    #mybox img{
+        width:230px;
+    }
+    </style>
+
+    <script type="text/javascript">
+    var img = {};
+    img.offset = 4;
+    img.display = 3;
+    img.count = 8;
+    img.number = 3;
+    img.index = 4;
+    var frame_width = 240;
+	
+    var images = {
+			"1":'sample_files/img1.jpg',
+			"2":'sample_files/img2.jpg',
+			"3":'sample_files/img3.jpg',
+			"4":'sample_files/img4.jpg',
+			"5":'sample_files/img5.jpg',
+			"6":'sample_files/img6.jpg',
+			"7":'sample_files/img7.jpg',
+			"8":'sample_files/img8.jpg'
+		};
+
+    function current() {
+        return img.index - img.offset;
+    }
+
+
+    function next(e, box) {
+        if (img.number - current() > img.display) {
+            img.index++;
+            $(box).style.left = -1*frame_width*current() + 'px';
+        } else if ( img.count >= img.number + img.offset) {
+            insert(box, img.index, 'right');
+            next(e, box);
+        }
+    }
+
+    function insert(parent, idx, pos) {
+        var c = new Element('span', {'style': 'width:' + frame_width + 'px;'});
+        img.number++;
+        if (pos == 'right') {
+            var n = new Element('img', {'src': images[idx+img.display]});
+            n.injectInside(c);
+            c.injectInside(parent);
+        } else {
+            var n = new Element('img', {'src': images[idx]});
+            n.injectInside(c);
+            c.injectTop(parent);
+        }
+    }
+
+    function prev(e, box) {
+        if (img.index > 1) {
+            if (current() == 0) {
+                insert(box, --img.index, 'left');
+                img.offset--;
+            } else {
+                img.index--;
+            }
+            $(box).style.left = -1*frame_width*current() + 'px';
+        }
+    }
+
+
+    window.addEvent('load', function(){
+        $$('#mybox span').each(function(span) {
+           span.setStyle('width', frame_width + 'px');
+        });
+        $('mask').setStyle('width', frame_width*img.display + 'px');
+    });
+
+    </script>
+</head>
+<body>
+    <div id="cont">
+    <!-- Insert your content here -->
+    <h2>Sample 1</h2>
+        <div class="sample">
+            <div class="mymask" id="mask">
+                <div style="width: 1920px; left: 0px;" id="mybox">
+                    <span><img src="sample_files/img4.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img5.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img6.jpg" alt="Photo"></span>
+                </div>
+            </div>
+            <p class="buttons">
+                <span id="prev1" onclick="prev(this, 'mybox');">&lt;&lt; Previous</span>
+                <span id="next1" onclick="next(this, 'mybox');">Next &gt;&gt;</span>
+            </p>
+        </div>
+
+<div style="clear:both"></div>
+<!--
+    <h2>Sample 2</h2>
+    <div class="sample">
+            <div class="mymask">
+                <div style="width: 1920px; left: 0px;" id="mybox2">
+                    <span><img src="sample_files/img3.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img4.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img5.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img6.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img7.jpg" alt="Photo"></span>
+                </div>
+            </div>
+            <p class="buttons">
+                <span id="prev2" onclick="prev(this, 'mybox2');">&lt;&lt; Previous</span>
+                <span id="next2" onclick="next(this, 'mybox2');">Next &gt;&gt;</span>
+            </p>
+        </div>
+-->
+
+</div>
+</body>
+</html>

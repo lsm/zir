@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div style="width:98%;">
+<div style="width:20%;float:left;">
+<p>代码：<textarea id="tplcode" onclick="select();" name="code" style="border: 1px solid;" cols="20" rows="5"><?php if (isset($this->preview)) echo $this->preview ?></textarea></p>
+<form action="" method="post">
+<?php for ($i = 1; $i <= $this->photoNumber; $i++) {?>
+<p>照片<?php echo $i; ?>：<input type="text" name="photo[]" value="<?php if(isset($_POST['photo'][$i])) echo $_POST['photo'][$i] ?>" /></p>
+<?php } ?>
+<p>宝贝描述：</p>
+<p><textarea name="desc" style="border: 1px solid;" cols="25" rows="5"><?php if(isset($_POST['desc'])) echo $_POST['desc'] ?></textarea></p>
+<p><input type="submit" value="提交" /></p>
+<input type="hidden" name="verify" value="1">
+<!--<p><input type="button" value="复制代码" onclick="Clipboard.copyFromElement('tplcode');"/></p>-->
+</form>
+</div>
+<div style="width:60%;float:left;">
+<?php
+echo $this->preview;
+?>
+</div>
+</div>
+</body>
+</html>

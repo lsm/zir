@@ -1,0 +1,15 @@
+AuthName "Please enter username and password"
+AuthType Basic
+AuthUserFile /home/www/.htpasswd
+
+<Limit GET POST>
+  require user rui
+</Limit>
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
+
+php_flag magic_quote_gpc off
+php_flag registry_global off

@@ -1,0 +1,243 @@
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://purl.org/NET/erdf/profile">
+<title>PHP: Examples - Manual</title>
+<style type="text/css" media="all">
+@import url("/styles/site.css");
+@import url("/styles/mirror.css");
+</style>
+<!--[if IE]><![if gte IE 6]><![endif]-->
+<style type="text/css" media="print">
+@import url("/styles/print.css");
+</style>
+<!--[if IE]><![endif]><![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="contents" href="index.php" />
+<link rel="index" href="book.stream.php" />
+<link rel="prev" href="stream.errors.php" />
+<link rel="next" href="ref.stream.php" />
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.rdfs" href="http://www.w3.org/2000/01/rdf-schema#" />
+<script type="text/javascript" src="/userprefs.js"></script>
+
+<base href="http://cn.php.net/manual/en/stream.examples.php" />
+</head>
+<body>
+
+<div id="headnav">
+<a href="/" rel="home"><img src="/images/php.gif"
+alt="PHP" width="120" height="67" /></a>
+<div id="headmenu">
+<a href="/downloads.php">downloads</a> |
+<a href="/docs.php">documentation</a> |
+<a href="/FAQ.php">faq</a> |
+<a href="/support.php">getting help</a> |
+<a href="/mailing-lists.php">mailing lists</a> |
+<a href="http://bugs.php.net/">reporting bugs</a> |
+<a href="/sites.php">php.net sites</a> |
+<a href="/links.php">links</a> |
+<a href="/conferences/">conferences</a> |
+<a href="/my.php">my php.net</a>
+
+</div>
+</div>
+
+<div id="headsearch">
+<form method="post" action="/search.php" id="topsearch">
+<p>
+<span title="Keyboard shortcut: Alt+S (Win), Ctrl+S (Apple)">
+<span class="shortkey">s</span>earch for
+</span>
+<input type="text" name="pattern" value="" size="30" accesskey="s" />
+
+<span>in the</span>
+<select name="show">
+<option value="quickref" selected="selected">function list</option>
+<option value="all"      >all php.net sites</option>
+<option value="local"    >this mirror only</option>
+<option value="manual"   >online documentation</option>
+
+<option value="bugdb"    >bug database</option>
+<option value="news_archive">Site News Archive</option>
+<option value="changelogs">All Changelogs</option>
+<option value="pear"     >just pear.php.net</option>
+<option value="pecl"     >just pecl.php.net</option>
+<option value="talks"    >just talks.php.net</option>
+
+<option value="maillist" >general mailing list</option>
+<option value="devlist"  >developer mailing list</option>
+<option value="phpdoc"   >documentation mailing list</option>
+</select>
+<input type="image"
+src="/images/small_submit_white.gif"
+class="submit" alt="search" />
+<input type="hidden" name="lang" value="en" />
+</p>
+
+</form>
+</div>
+
+<div id="layout_2">
+<div id="leftbar">
+<!--UdmComment-->
+<ul class="toc">
+<li class="header home"><a href="index.php">PHP Manual</a></li>
+<li class="header up"><a href="funcref.php">Function Reference</a></li>
+<li class="header up"><a href="refs.basic.other.php">Other Basic Extensions</a></li>
+
+<li class="header up"><a href="book.stream.php">Streams</a></li>
+<li><a href="intro.stream.php">Introduction</a></li>
+<li><a href="stream.setup.php">Installing/Configuring</a></li>
+<li><a href="stream.constants.php">Predefined Constants</a></li>
+<li><a href="stream.filters.php">Stream Filters</a></li>
+<li><a href="stream.contexts.php">Stream Contexts</a></li>
+
+<li><a href="stream.errors.php">Stream Errors</a></li>
+<li class="active"><a href="stream.examples.php">Examples</a></li>
+<li><a href="ref.stream.php">Stream Functions</a></li>
+</ul><!--/UdmComment-->
+
+</div>
+<div id="content" class="manual/en">
+<!--UdmComment-->
+<div class="manualnavbar manualnavbar_top">
+
+<span class="next">
+<a href="ref.stream.php">Stream Functions<img src="/images/caret-r.gif" alt="&gt;" width="11" height="7" /></a>
+</span>
+<span class="prev">
+<a href="stream.errors.php"><img src="/images/caret-l.gif" alt="&lt;" width="11" height="7" />Stream Errors</a>
+</span>
+<hr />
+<span class="lastupdated">Last updated: Fri, 08 Aug 2008</span>
+
+<div class="langchooser">
+<form action="/manual/change.php" method="get">
+<p>view this page in </p><fieldset><select name="page">
+<option value="bg/stream.examples.php">Bulgarian</option>
+<option value="pt_BR/stream.examples.php">Brazilian Portuguese</option>
+<option value="fr/stream.examples.php">French</option>
+<option value="de/stream.examples.php">German</option>
+
+<option value="it/stream.examples.php">Italian</option>
+<option value="ja/stream.examples.php">Japanese</option>
+<option value="pl/stream.examples.php">Polish</option>
+<option value="ro/stream.examples.php">Romanian</option>
+<option value="ru/stream.examples.php">Russian</option>
+<option value="es/stream.examples.php">Spanish</option>
+
+<option value="help-translate.php">Other</option>
+</select>
+<input type="image" src="/images/small_submit.gif" id="changeLangImage" alt="" />
+</fieldset></form>
+</div>
+</div>
+<!--/UdmComment-->
+
+<div>
+<h1>Examples</h1>
+
+<p class="para">
+<div class="example">
+<p><b>Example #1 Using <a href="function.file-get-contents.php" class="function">file_get_contents()</a>
+to retrieve data from multiple sources</b></p>
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Read&nbsp;local&nbsp;file&nbsp;from&nbsp;/home/bar&nbsp;*/<br /></span><span style="color: #0000BB">$localfile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/bar/foo.txt"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Identical&nbsp;to&nbsp;above,&nbsp;explicitly&nbsp;naming&nbsp;FILE&nbsp;scheme&nbsp;*/<br /></span><span style="color: #0000BB">$localfile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"file:///home/bar/foo.txt"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Read&nbsp;remote&nbsp;file&nbsp;from&nbsp;www.example.com&nbsp;using&nbsp;HTTP&nbsp;*/<br /></span><span style="color: #0000BB">$httpfile&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/foo.txt"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Read&nbsp;remote&nbsp;file&nbsp;from&nbsp;www.example.com&nbsp;using&nbsp;HTTPS&nbsp;*/<br /></span><span style="color: #0000BB">$httpsfile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"https://www.example.com/foo.txt"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Read&nbsp;remote&nbsp;file&nbsp;from&nbsp;ftp.example.com&nbsp;using&nbsp;FTP&nbsp;*/<br /></span><span style="color: #0000BB">$ftpfile&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftp://user:pass@ftp.example.com/foo.txt"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Read&nbsp;remote&nbsp;file&nbsp;from&nbsp;ftp.example.com&nbsp;using&nbsp;FTPS&nbsp;*/<br /></span><span style="color: #0000BB">$ftpsfile&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftps://user:pass@ftp.example.com/foo.txt"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+
+</span>
+</code></div>
+</div>
+
+</div>
+</p>
+<p class="para">
+<div class="example">
+<p><b>Example #2 Making a POST request to an https server</b></p>
+<div class="example-contents">
+
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Send&nbsp;POST&nbsp;request&nbsp;to&nbsp;https://secure.example.com/form_action.php<br />*&nbsp;Include&nbsp;form&nbsp;elements&nbsp;named&nbsp;"foo"&nbsp;and&nbsp;"bar"&nbsp;with&nbsp;dummy&nbsp;values<br />*/<br /><br /></span><span style="color: #0000BB">$sock&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fsockopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"ssl://secure.example.com"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">443</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errstr</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">30</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$sock</span><span style="color: #007700">)&nbsp;die(</span><span style="color: #DD0000">"$errstr&nbsp;($errno)\n"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"foo="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #DD0000">"Value&nbsp;for&nbsp;Foo"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&amp;bar="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #DD0000">"Value&nbsp;for&nbsp;Bar"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"POST&nbsp;/form_action.php&nbsp;HTTP/1.0\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Host:&nbsp;secure.example.com\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Content-type:&nbsp;application/x-www-form-urlencoded\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Content-length:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Accept:&nbsp;*/*\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"$data\r\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$headers&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">trim</span><span style="color: #007700">(</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4096</span><span style="color: #007700">)))<br /></span><span style="color: #0000BB">$headers&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"$str\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$body&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />while&nbsp;(!</span><span style="color: #0000BB">feof</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">))<br /></span><span style="color: #0000BB">$body&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4096</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$sock</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+
+</span>
+</code></div>
+</div>
+
+</div>
+</p>
+<p class="para">
+<div class="example">
+<p><b>Example #3 Writing data to a compressed file</b></p>
+<div class="example-contents">
+
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Create&nbsp;a&nbsp;compressed&nbsp;file&nbsp;containing&nbsp;an&nbsp;arbitrarty&nbsp;string<br />*&nbsp;File&nbsp;can&nbsp;be&nbsp;read&nbsp;back&nbsp;using&nbsp;compress.zlib&nbsp;stream&nbsp;or&nbsp;just<br />*&nbsp;decompressed&nbsp;from&nbsp;the&nbsp;command&nbsp;line&nbsp;using&nbsp;'gzip&nbsp;-d&nbsp;foo-bar.txt.gz'<br />*/<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"compress.zlib://foo-bar.txt.gz"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"wb"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$fp</span><span style="color: #007700">)&nbsp;die(</span><span style="color: #DD0000">"Unable&nbsp;to&nbsp;create&nbsp;file."</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;a&nbsp;test.\n"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+
+</span>
+</code></div>
+</div>
+
+</div>
+</p>
+</div>
+<br /><br />
+<div id="usernotes">
+<div class="head">
+<span class="action"><a href="/manual/add-note.php?sect=stream.examples&amp;redirect=http://cn.php.net/manual/en/stream.examples.php"><img src="/images/notes-add.gif" alt="add a note" width="13" height="13" align="middle" /></a> <small><a href="/manual/add-note.php?sect=stream.examples&amp;redirect=http://cn.php.net/manual/en/stream.examples.php">add a note</a></small></span>
+
+<small>User Contributed Notes</small><br />
+<strong>Examples</strong>
+</div>
+<div class="note">There are no user contributed notes for this page.</div></div><br /><!--UdmComment-->
+<div class="manualnavbar manualnavbar_bottom">
+<span class="next">
+<a href="ref.stream.php">Stream Functions<img src="/images/caret-r.gif" alt="&gt;" width="11" height="7" /></a>
+
+</span>
+<span class="prev">
+<a href="stream.errors.php"><img src="/images/caret-l.gif" alt="&lt;" width="11" height="7" />Stream Errors</a>
+</span>
+<hr />
+<span class="lastupdated">Last updated: Fri, 08 Aug 2008</span>
+<div class="langchooser">
+&nbsp;
+
+</div>
+</div>
+<!--/UdmComment-->
+
+
+</div>
+<div class="cleaner">&nbsp;</div>
+</div>
+
+<div id="footnav">
+<a href="/source.php?url=/manual/en/stream.examples.php">show source</a> |
+<a href="/credits.php">credits</a> |
+<a href="/sitemap.php">sitemap</a> |
+<a href="/contact.php">contact</a> |
+<a href="/contact.php#ads">advertising</a> |
+<a href="/mirrors.php">mirror sites</a>
+
+</div>
+
+<div id="pagefooter">
+<div id="copyright">
+<a href="/copyright.php">Copyright &copy; 2001-2008 The PHP Group</a><br />
+All rights reserved.
+</div>
+
+<div id="thismirror">
+<a href="/mirror.php">This mirror</a> generously provided by:
+<a href="http://www.verycd.com">VeryCD Network</a><br />
+
+Last updated: Tue Aug 12 23:43:10 2008 CST
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart xmlns:py="http://genshi.edgewall.org/" dateFormat='yyyy/mm/dd' showTaskNames='1' ganttWidthPercent='70' gridBorderAlpha='100' canvasBorderColor='333333' canvasBorderThickness='0' hoverCapBgColor='FFFFFF' hoverCapBorderColor='333333' extendcategoryBg='0' ganttLineColor='99cc00' ganttLineAlpha='20' baseFontColor='333333' gridBorderColor='99cc00'>
+
+    <categories bgColor='333333' fontColor='99cc00' isBold='1' fontSize='14' >
+        <category start='${boundary[0]}' end='${boundary[1]}' name='${boundary[0]} - ${boundary[1]}' />
+    </categories>
+
+    <categories bgColor='99cc00' bgAlpha='40' fontColor='333333' align='center' fontSize='10' isBold='1'>
+        <py:for each="b in boundary[2]">
+		<category start='${b.keys()}' end='${b.values()}'
+				  name='${b.keys()} - ${b.values()[0].split("/")[1]}/${b.values()[0].split("/")[2]}' isBold="1"/>
+		</py:for>
+    </categories>
+
+    <processes positionInGrid='right' align='center' headerText='Tasks'
+			   fontColor='333333' fontSize='11' isBold='1' isAnimated='1'
+			   bgColor='99cc00' headerbgColor='333333' headerFontColor='99cc00'
+			   headerFontSize='16' bgAlpha='40' width="70">
+        <py:for each="k, t in tickets.items()">
+		<process Name='${t.summary}' id='p${t.id}' />
+		</py:for>
+	</processes>
+
+    <dataTable fontColor='333333' fontSize='11' isBold='1' headerFontColor='000000' headerFontSize='11'>
+        <dataColumn headerbgColor='333333' headerfontSize='16' headerAlign='left' headerfontcolor='99cc00' bgColor='99cc00' headerText='Owner' align='left' bgAlpha='65'>
+            <py:for each="k, t in tickets.items()">
+			<text label='${t.owner}' />
+			</py:for>
+        </dataColumn>
+		<dataColumn headerbgColor='333333' headerfontSize='16' headerAlign='left' headerfontcolor='99cc00' bgColor='99cc00' headerText='Reporter' align='left' bgAlpha='40'>
+            <py:for each="k, t in tickets.items()">
+			<text label='${t.reporter}' />
+			</py:for>
+        </dataColumn>
+		<dataColumn headerbgColor='333333' headerfontSize='16' headerAlign='left' headerfontcolor='99cc00' bgColor='99cc00' headerText='Progress' align='left' bgAlpha='65'>
+            <py:for each="k, t in tickets.items()">
+			<text label='${t.percent}%' align="center"/>
+			</py:for>
+        </dataColumn>
+    </dataTable>
+
+      <tasks>
+		<py:for each="k, t in tickets.items()">
+        <task py:if="t.due_start" name='${t.summary}' hoverText='${t.description}' processId='p${t.id}' start='${t.due_start}'
+			  end='${t.due_close}' id='t${t.id}' color='99cc00' alpha='60' topPadding='19' height="10"
+			  link='${href.ticket(t.id)}'/>
+		<task py:if="t.actual_start" name='${t.summary}' hoverText='${t.summary}' showName='0' processId='p${t.id}' start='${t.start}'
+			  end='${t.end}' id='ta${t.id}' color='ffcc00' alpha='60' topPadding='40' height="10"
+			  link='${href.ticket(t.id)}'/>
+		<task py:if="t.estimated_start" name='${t.summary}' hoverText='${t.summary}' showName='0' processId='p${t.id}' start='${t.start}'
+			  end='${t.end}' id='ta${t.id}' color='cccccc' alpha='60' topPadding='40' height="10"
+			  link='${href.ticket(t.id)}'/>
+		</py:for>
+	</tasks>
+
+    <connectors>
+		<py:for each="k, t in tickets.items()">
+			<py:if test="t.depends_on">
+			<connector fromTaskId='t${t.depends_on}' toTaskId='t${t.id}' color='333333' thickness='2' />
+				<py:if test="t.start">
+			<connector fromTaskId='ta${t.depends_on}' toTaskId='ta${t.id}' color='065F09' thickness='2' isDashed="0"/>
+				</py:if>
+			</py:if>
+		</py:for>
+     </connectors>
+
+    <milestones>
+		<py:for each="k, t in tickets.items()">
+        <milestone py:if="t.actual_end" date='${t.actual_end}' taskId='ta${t.id}' radius='10' color='333333' shape='Star' numSides='5' borderThickness='1'/>
+		</py:for>
+    </milestones>
+
+</chart>

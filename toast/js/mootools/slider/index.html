@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Mootools slider example</title>
+    <script type="text/javascript" src="mootools.js"></script>
+    <link rel="stylesheet" href="sample_files/_web.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="sample_files/style.css" type="text/css" media="screen">
+
+    <style type="text/css">
+    .mymask{
+        position:relative;
+        height:180px;
+        width: 720px;
+        overflow:hidden;
+    }
+    #mybox{
+        position:absolute;
+    }
+    #mybox span{
+        display:block;
+        width: 240px;
+        float:left;
+    }
+    #mybox img{
+        width:230px;
+    }
+    </style>
+
+    <script type="text/javascript">
+    var current = 0;
+    var img_number = 8;
+    var display_number = 2;
+    //var img_width = 220;
+    var frame_width = 240;
+
+    var images = [1,2,3,4,5,6,7,8];
+
+    function next(e, box) {
+        if (img_number - current > display_number) {
+            $(box).style.left = -1*frame_width*++current + 'px';
+        } else {
+
+        }
+    }
+
+    function prev(e, box) {
+        if (current > 0) {
+            $(box).style.left = -1*frame_width*--current + 'px';
+        }
+    }
+
+/*
+    window.addEvent('domready', function(){
+        $$('span').each(function(span){
+            span.setStyle('width', frame_width);
+        });
+    });
+*/
+    </script>
+</head>
+<body>
+    <div id="cont">
+    <!-- Insert your content here -->
+    <h2>Sample 1</h2>
+        <div class="sample">
+            <div class="mymask">
+                <div style="width: 1920px; left: 0px;" id="mybox">
+                    <span><img src="sample_files/img1.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img2.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img3.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img4.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img5.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img6.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img7.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img8.jpg" alt="Photo"></span>
+                </div>
+            </div>
+            <p class="buttons">
+                <span id="prev1" onclick="prev(this, 'mybox');">&lt;&lt; Previous</span>
+                <span id="next1" onclick="next(this, 'mybox');">Next &gt;&gt;</span>
+            </p>
+        </div>
+
+<div style="clear:both"></div>
+<!--
+    <h2>Sample 2</h2>
+    <div class="sample">
+            <div class="mymask">
+                <div style="width: 1920px; left: 0px;" id="mybox2">
+                    <span><img src="sample_files/img3.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img4.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img5.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img6.jpg" alt="Photo"></span>
+                    <span><img src="sample_files/img7.jpg" alt="Photo"></span>
+                </div>
+            </div>
+            <p class="buttons">
+                <span id="prev2" onclick="prev(this, 'mybox2');">&lt;&lt; Previous</span>
+                <span id="next2" onclick="next(this, 'mybox2');">Next &gt;&gt;</span>
+            </p>
+        </div>
+-->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+*/1 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/worker.php?task=paging > /dev/null 2>&1
+*/1 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/worker.php?task=content > /dev/null 2>&1 
+*/1 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/uploader.php /dev/null 2>&1 
+*/50 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/worker.php?task=list&channel=0&rule_name=sina-games > /dev/null 2>&1 
+*/50 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/worker.php?task=list&channel=0&rule_name=17173-news > /dev/null 2>&1 
+*/50 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/worker.php?task=list&channel=1&rule_name=17173-news > /dev/null 2>&1 
+*/50 * * * * /usr/bin/wget http://lo/zir/ng/leecher/backend/worker.php?task=list&channel=2&rule_name=17173-news > /dev/null 2>&1 

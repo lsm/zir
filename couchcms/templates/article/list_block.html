@@ -1,0 +1,8 @@
+<div class="block">
+    <div class="block_title"></div>
+    <ul class="block_list">
+        {% for post in post_list %}
+        <li class="list_item"><a href="{% url article_content post.id %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

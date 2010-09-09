@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" href="http://dev.navgame.com/css/style.css" rel="stylesheet"/>
+<title>{{ page.title }}</title>
+</head>
+<body style="text-align:center;margin:0;padding:0;">
+<div id="container">
+    {% block header %}
+    <div id="header">
+    	<div id="header-logo"></div>
+        <div id="header-ad">
+        {% autoescape off %}
+	{{ ads.header }}
+        {% endautoescape %}
+        </div>
+    </div>
+    {% endblock %}
+    
+    {% block tag-cloud %}
+     <div id="tag-cloud">
+        <div id="tag-google">
+            <!-- SiteSearch Google -->
+                <form method="get" action="http://www.google.cn/custom" target="google_window">
+                        <table border="0" bgcolor="#ffffff">
+                            <tr>
+                                <td nowrap="nowrap" valign="top" align="left" height="32">
+                                </td>
+                                <td nowrap="nowrap">
+                                    <input type="hidden" name="domains" value="www.navgame.com">
+                                    </input>
+                                    <label for="sbi" style="display: none">
+                                        输入您的搜索字词
+                                    </label>
+                                    <input type="text" name="q" size="31" maxlength="255" value="交友" id="sbi" onclick="javascript:this.value='';">
+                                    </input>
+                                    <label for="sbb" style="display: none">
+                                        提交搜索表单
+                                    </label>
+                                    <input type="submit" name="sa" value="搜索" id="sbb">
+                                    </input>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td nowrap="nowrap">
+                                        <input type="hidden" name="sitesearch" value="www.navgame.com" checked id="ss1">
+                                        </input><input type="hidden" name="client" value="pub-0867368450523051">
+                                        </input><input type="hidden" name="forid" value="1">
+                                        </input><input type="hidden" name="ie" value="UTF-8">
+                                        </input><input type="hidden" name="oe" value="UTF-8">
+                                        </input><input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:36;LW:200;L:http://www.navgame.com/images/logo.png;S:http://www.navgame.com;FORID:1">
+                                        </input><input type="hidden" name="hl" value="zh-CN">
+                                        </input>
+                                        </td>
+                                    </tr>
+                                    </table>
+                                </form><!-- SiteSearch Google -->
+        </div>
+    </div>
+                            <div style="clear:both;">
+                            </div>
+    {% endblock %}
+    
+    {% block main %}
+    {% endblock %}
+    
+    {% block footer %}
+    <div style="clear:both;"></div>
+            <div id="footer">
+                ©2008 游戏领航员 www.navgame.com
+            </div>
+        </div>
+    </body>
+</html>
+    {% endblock %}

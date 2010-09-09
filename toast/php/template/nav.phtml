@@ -1,0 +1,42 @@
+<?php
+/**
+ * @todo should we move this to controller?
+ */
+if(isset($_SESSION['username'])) {
+	$this->greeting = 'Hello, ';
+	$this->username = $_SESSION['username'];
+	$this->loginUrl  = '/user/logout';
+	$this->loginText  = 'logout';
+} else {
+	$this->loginUrl  = '/user/login';
+	$this->loginText  = 'login';
+}
+?>
+{$navVar}
+{$navVar}
+{$navVar}
+
+
+<div class="nav">
+<div class="navUser"><?php echo $this->greeting . $this->username . ' | ';?> <a
+	href="<?php echo $this->baseUrl;?>/profile">my profile</a> | <a
+	href="<?php echo $this->baseUrl;?>/course">my courses</a> | <a
+	href="<?php echo $this->baseUrl;?>/user">my account</a> | <a
+	href="<?php echo $this->baseUrl . $this->loginUrl;?>"><?php echo $this->loginText;?></a>
+</div>
+<div class="clear"></div>
+
+<div id="navSite">
+<li><a href="<?php echo $this->baseUrl;?>/">Home</a></li>
+<li>|</li>
+<li><a href="<?php echo $this->baseUrl;?>/course/all">Courses</a></li>
+<li>|</li>
+<li><a href="<?php echo $this->baseUrl;?>/user/list/teacher/all">Teachers</a></li>
+<li>|</li>
+<li><a href="<?php echo $this->baseUrl;?>/user/list/student/all">Free exchange</a></li>
+<li>|</li>
+<li><a href="<?php echo $this->baseUrl;?>/whiteboard">Whiteboard</a></li>
+</div>
+</div>
+<div class="clear"></div>
+<div id="content">

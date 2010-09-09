@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/html"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="layout.html" />
+  <head>
+    <title>QGantt Chart</title>
+  </head>
+  <body>
+    <div id="ctxtnav" class="nav"></div>
+	    <div id="content">
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="text" align="center"> <div id="chartdiv" align="center">
+        FusionCharts. </div>
+      <script type="text/javascript">
+		   var chart = new FusionCharts("${href.chrome('/qgantt/fusioncharts/Charts/FCF_Gantt.swf')}", "ChartId", "900", "750");
+		   chart.setDataURL("${href.qgantt(chart_xml)}");
+		   chart.render("chartdiv");
+		</script> </td>
+  </tr>
+  <tr>
+	<font style="color:#99cc00;"><strong>Planned</strong></font>
+	<font style="color:#ffcc00;"><strong>Actual</strong></font>
+	<font style="color:#cccccc;"><strong>Estimated</strong></font>
+    <td valign="top" class="text" align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text" align="center">
+	  <a href="${href.qgantt(chart_xml)}" target="_blank">
+		View XML for the above chart
+	  </a></td>
+  </tr>
+</table>
+    </div>
+  </body>
+</html>

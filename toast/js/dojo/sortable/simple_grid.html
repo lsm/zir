@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Simple Dojo grid</title>
+        <style type="text/css">
+            @import "http://js/dojo/lib/dijit/themes/tundra/tundra.css";
+            @import "http://js/dojo/lib/dojo/resources/dojo.css"
+						@import "http://js/dojo/lib/dojox/grid/_grid/Grid.css";
+						@import "http://js/dojo/lib/dojox/grid/_grid/tundraGrid.css";
+        </style>
+        <script type="text/javascript">
+            djConfig = {
+                isDebug: true,
+                parseOnLoad: true
+            };
+        </script>
+        <script type="text/javascript" src="../lib/dojo/dojo.js">
+        </script>
+        <script type="text/javascript">
+            dojo.require("dojo.parser");
+            dojo.require("dojox.grid.Grid");
+            dojo.require("dojox.grid._data.model");
+            var data = [/* part #, min T rtg, max T rtg, max P rtg */['4001', -946, 931, 647], ['4002', -601, 1894, 208], ['4003', 456, 791, 132], ['4004', -259, 2433, 840]];
+            var model = new dojox.grid.data.Table(null, data);
+//						var cell = { name: 'Cell Name' };
+//						var subrow = [ cell ];
+//						var view = { rows: subrow };
+//						var structure = [ view ];
+						var subrow = [
+							{ name: 'Part Number' },
+							{ name: 'Minimum Temperature (F)', formatter: formatDegrees },
+							{ name: 'Maximum Temperature (F)', formatter: formatDegrees },
+							{ name: 'Maximum Pressure' }
+						];
+						 
+						var view = {
+							rows: [ subrow ]
+						};
+						 
+						var structure = [
+							view
+						];
+						function formatDegrees(v){
+							return v + '&deg;';
+						}
+        </script>
+    </head>
+    <body class="tundra">
+    	
+		<div id="grid" dojoType="dojox.Grid" model="model" 
+    structure="structure" autoWidth="true"></div>
+	
+    </body>
+</html>

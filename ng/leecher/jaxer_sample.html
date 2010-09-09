@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title>Jaxer Sample</title>
+        <style>
+            html {
+                height: 95%;
+                width: 99%;
+                padding: 0;
+                margin: 0;
+            }
+            
+            body {
+                font: 10pt verdana;
+                font-family: verdana;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            
+            #contents {
+                width: 100%;
+                height: 95%;
+            }
+            
+            #editOrSave {
+                width: 100%;
+            }
+            
+            .readonly {
+                font: 8pt verdana;
+                background-color: #f0f0ff;
+                border: none;
+                padding: 8px;
+            }
+            
+            td {
+                font: 10pt verdana;
+                font-family: verdana;
+                height: 100%;
+                padding: 10px;
+                margin: 0;
+            }
+            
+            .note {
+                padding: 10px;
+                border: 1px solid #CCCCCC;
+            }
+            
+            h2 {
+                width: 100%;
+                background-color: #3e4653;
+                color: #FFFFFF;
+                padding: 20px;
+            }
+			
+			pre{
+				font-size:80%;
+				 padding:10px;
+				 border:1px solid #EEEEEE;
+			}
+            
+        </style>
+    </head>
+    <body>
+        <h2>Welcome to Jaxer</h2>
+        <table cellpadding="10">
+            <tr>
+                <td colspan="2">
+                    <p>
+                        Rich, "Ajax-style" web sites and applications offer tremendous advantages over both static web sites and desktop applications. But
+                        they can be difficult to develop, maintain, and expand. Many of the difficulties on the client side are alleviated by Ajax libraries such
+                        as jQuery, ext, and Dojo, and by development environments such as the Aptana IDE. Jaxer, the Aptana server, completes the picture by
+                        offering a powerful "Ajax server." With Jaxer, you can:
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                <h3>Simple Sample</h3>
+                <p>
+                    Below is a extremely simple sample that shows how to write out server content.
+                </p>
+                <script runat="server">
+                    document.write("<p class='note'>Jaxer build number: " + Jaxer.buildNumber + "</p>");
+                </script>
+                <h4>Exploring Jaxer code.</h4>
+                <p>
+                    Press the <b>Source</b>
+                    tab in the HTML editor. You'll see multliple colors of code. Code like this runs on the server:
+                    <div style="background-color:#f3f7ff;">
+                        <pre>
+function checkValid(contents)
+{
+    if (contents.length > 10000)
+    {
+        throw "Too long!";
+    }
+}	
+</pre>
+                    </div>
+                </p>
+                <p>
+                    Code like this runs in the browser <i>and</i>
+                    on the server. To try, change the &lt;script runat="server" to runat="both":
+                    <div style="background-color:#fff6d9;">
+                        <pre>
+function getFilePath()
+{
+    return "contents.txt";
+}
+</pre>
+                    </div>
+                </p>
+                <p>
+                    In addition, you'll see colors and icons corresponding to server and client code in the Outline view.
+                </p>
+                </p>
+            </td>
+            <td valign="top">
+                <h3>Exploring Jaxer</h3>
+                <p>
+                    Aptana Studio provides a number of ways to play with Jaxer.
+                </p>
+                <h4>Step 1. Open the servers view and see the Jaxer and Jetty servers running.</h4>
+                <ol>
+                    <li>
+                        Show Statistics shows the current Jaxer build number
+                    </li>
+                    <li>
+                        Right-click on the Jaxer Internal Server and choose "Open Log". This is the log of the internal Jaxer process.
+                    </li>
+                </ol>
+                <h4>Step 2. Play with the Jaxer interactive console.</h4>
+                <p>
+                    Try the following:
+                </p>
+                <ol>
+                    <li>
+                        Open up the Jaxer Shell
+                    </li>
+                    <li>
+                        Type the following:<pre>
+var tmp = [];
+for (var p in Jaxer)
+{
+    tmp.push("Jaxer." + p);
+}
+print(tmp.sort().join("\n"));
+							</pre>
+                    </li>
+                    <li>
+                        Press the play button, or Control + Enter on the keyboard.
+                    </li>
+                    <li>
+                        See how it writes out the items in the Jaxer namespace
+                    </li>
+                </ol>
+                <h4>Additional Samples</h4>
+                <p>
+                    Check the samples view for additional samples to preview and import.
+                </p>
+            </td>
+            </tr>
+        </table>
+    </body>
+</html>

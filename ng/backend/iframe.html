@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+<script TYPE="text/javascript" src="http://lo/js/lib/dojo/1.2.0/dojo/dojo.js.uncompressed.js"></script>
+
+</head>
+<body>
+    <iframe id="page" name="page" src="http://games.sina.com.cn/news/wlyx/"></iframe>
+    <div id="data"></div>
+
+
+
+<script type="text/javascript">
+dojo.addOnLoad(function(){
+	dojo.forEach(dojo.query('td.linkBlue a'),
+		     function(item, idx, arr) {
+                        url = item.getAttribute('href');
+
+                        //re = /^http:\/\/www\.(?!hao123)(.*)$/;
+                        //if (url.match(re)) {
+                        //    console.log('*.' + url.match(re)[1].replace(/\/.*/, ''));
+                        //}
+
+		    });
+
+        //fetch(dojo.byId('page').getAttribute('href'), 'data');
+        //alert(dojo.byId('page').content);
+        var d = document.getElementById('page').contentWindow;
+        alert(d.innerHTML);
+});
+
+function fetch(url, where) {
+    dojo.xhrGet({
+        url: url,
+        load: function(response, io) {
+            dojo.byId(where).innerHTML = response;
+        }
+    });
+}
+
+</script>
+</body>
+</html>

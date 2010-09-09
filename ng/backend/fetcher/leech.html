@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <script djConfig="parseOnLoad:true, isDebug:true" TYPE="text/javascript" src="http://lo/js/lib/dojo/1.2.0/dojo/dojo.js.uncompressed.js"></script>
+    <script type="text/javascript">
+
+function fetch(formId, where) {
+    dojo.xhrGet({
+        url: 'http://lo/ng/backend/fetcher/header.php',
+        handleAs: "text",
+        form: dojo.byId(formId),
+        load: function(response, io) {
+            dojo.byId(where).innerHTML = response;
+            return response;
+        },
+    });
+}
+
+function post(formId) {
+    dojo.xhrPost({
+        url: 'http://lo/ng/backend/fetcher/proxy.php?dest=' + dojo.byId(formId).getAttribute('action'),
+        form: dojo.byId(formId),
+        load: function(response, io) {
+            console.log(response);
+        }
+    });
+}
+
+function save(formId) {
+    dojo.forEach(dojo.query('td.linkBlue a'),
+		function(item, idx, arr) {
+                    url = item.getAttribute('href');
+                    re = /^http:\/\/games.sina.com.cn(.*)$/;
+
+                    if (url.match(re)) {
+                        //console.log(url);
+                        dojo.byId('news-url').value = url;
+                        dojo.byId('news-source').value = 'games.sina.com.cn';
+                        post(formId);
+                    }
+    });
+}
+
+</script>
+</head>
+<body>
+    <form id="form" action="" method='get'>
+    <input id="url" type="text" name='url' value=""/>
+    <input type="button" value="Fetch" onclick="fetch('form', 'data');return false;"/>
+    <input type="button" value="Save" onclick="save('news-form');return false;"/>
+    </form>
+
+    <form id="news-form" action="http://127.0.0.1:8000/leecher/new/url/" method="post">
+        <input id="news-url" type="text" name="url"/>
+        <input id="news-source" type="text" name="source"/>
+        <input type="submit" value="submit"/>
+    </form>
+    <div id="data"></div>
+</body>
+</html>

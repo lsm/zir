@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Untitled Document</title>
+        <script runat="server" djConfig="parseOnLoad:true, isDebug:false" type="text/javascript" src="lib/dojo/dojo/dojo.js">
+        </script>
+        <script runat="server" src="rules/17173-news.js">
+        </script>
+        <script runat="server" src="leech.js">
+        </script>
+    </head>
+    <body>
+        <div id="console">
+        </div>
+        <script type="text/javascript" runat="server">
+            var lee = leech.init(rules[1]);
+            var links = lee.parseListPage(1);
+            
+            dojo.forEach(links, function(item, idx, arr) {
+                data = lee.parseContentPage(item);
+                if (data != null) {
+                    data.cid = lee.options.type.cid;
+                    data.mid = lee.options.type.mid;
+                    data.digest = 3;
+                    data.imagetolocal = 1;
+                    data.selectimage = 0;
+                    data.autofpage = 1;
+//										lee._log(data.content);
+                    //data.author = 'Aptana';
+                    lee.post('http://admintools.navgame.com/glee442460deef2b9c340f73/add.php', data);
+                }
+            });
+        </script>
+    </body>
+</html>

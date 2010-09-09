@@ -1,0 +1,35 @@
+#!/bin/bash
+
+CONFIG="$1"
+
+RUN=/var/www/bin/client_queue.php
+SPOOLDIR=/var/www/spool/dropr/clientspool/
+STORAGE=filesystem
+PHP=/usr/bin/php
+
+CWD=`dirname "$CONFIG"`
+
+if [ -e "$CONFIG" ]
+then
+    . "$CONFIG"
+else
+    if [ -e /etc/default/dropr ]
+    then
+        . /etc/default/dropr
+    fi
+fi
+
+clean_up()
+{
+    kill -SIGUSR1 $SLAVE
+    exit
+}
+
+trap clean_up SIGHUP SIGINT SIGTERM
+
+while [ 1 ]
+do
+    $PHP $RUN $STORAGE $SPOOLDIR $LOG_LEVEL &
+    SLAVE=$!
+    wait $SLAVE
+done

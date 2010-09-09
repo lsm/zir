@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <script TYPE="text/javascript" src="http://lo/js/lib/dojo/1.2.0/dojo/dojo.js.uncompressed.js"></script>
+    <script type="text/javascript">
+    var url = 'http://games.sina.com.cn/o/n/2008-10-24/1433275767.shtml';
+function fetch(formId, where) {
+    dojo.xhrGet({
+        url: 'http://lo/ng/backend/fetcher/header.php',
+        handleAs: "text",
+        form: dojo.byId(formId),
+        load: function(response, io) {
+            dojo.byId(where).innerHTML = response;
+            return response;
+        }
+    });
+}
+
+
+function parse(id) {
+    var data = {};
+    data.title = dojo.query('h1', '#artibodyTitle')[0].innerHTML;
+    data.content = dojo.byId('artibody').innerHTML;
+    alert(data);
+}
+
+    </script>
+
+
+
+</head>
+<body>
+    <form id="form" action="" method='get'>
+        <input id="url" type="text" name='url' value=""/>
+        <input type="button" value="Fetch" onclick="fetch('form', 'data');return false;"/>
+        <input type="button" value="Save" onclick="parse('data');return false;"/>
+    </form>
+    <div id="data"></div>
+</body>
+</html>

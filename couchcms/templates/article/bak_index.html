@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Blog list{% endblock %}
+
+{% block content %}
+
+{% for post in post_list %}
+    <h3><a href="{% url article_content post.id %}">{{ post.title }}</a></h3>
+    <p>
+        Posted by <b><a href="/blog/author/{{ post.author }}/">{{ post.author }}</a></b>
+        at <b>{{ post.published }}</b>
+        in <b><a href="/blog/type/{{ post.type }}/">{{ post.type }}</a></b>
+    </p>
+    {% ifnotequal post.tags '' %}
+        <p>Tags:
+            {% for tag in post.tags %}
+            <a href="/tag/{{ tag }}/">{{ tag }}</a>
+            {% endfor %}
+        </p>
+    {% endifnotequal %}
+    <p>Operations: <a href="/blog/delete/{{ post.id }}/">Delete</a></p>
+    <hr>
+{% endfor %}
+
+{{ category }}
+{% endblock %}

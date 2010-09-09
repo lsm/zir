@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Demo of TimerPicker</title>
+        <style type="text/css">
+            .selected {
+                background: #F1BB37 none repeat scroll 0 0 !important;
+            } .timeCell {
+                background: #FFFFFF none repeat scroll 0 0;
+                border-bottom: 1px solid #D9D9D9;
+                border-right: 1px solid #D9D9D9;
+                cursor: n-resize;
+            } .timeAxis {
+                background-color: #FFFFD9;
+                cursor: default;
+                font-size: 12px;
+                width: 50px;
+                text-align: center;
+                border-bottom: 1px solid #D9D9D9;
+                border-right: 1px solid #D9D9D9;
+            } .timeTable {
+            	float: left;
+            } .ntf {
+            	height: 14px;
+				margin-left: 10px;
+            	background-color: #00BB00;
+            } a {
+            	float:left;
+				margin-left: 5px;
+            }
+        </style>
+        <!--<script src="lib/dojo.js" type="text/javascript"></script>-->
+		<SCRIPT TYPE="text/javascript" SRC="http://ajax.googleapis.com/ajax/libs/dojo/1.2/dojo/dojo.xd.js"></SCRIPT>
+        <!-- Dependencies -->
+        <!--<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/yahoo/yahoo.js">
+        </script>-->
+        <!-- Source File -->
+        <!--<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/profiler/profiler-min.js">
+        </script>-->
+        <script type="text/javascript">
+            //dojo.require("dojo.NodeList-fx");
+			var selected = [];			
+			var createCalendar = function(){
+                var table = '';
+                for (var i = 0; i < 48; i++) {
+                    table += "<tr>";
+                    table += '<td class="timeAxis">' + getTime(i) + '</td>';
+                    for (var j = 1; j < 8; j++) {
+                        table += '<td id="' + j + '_' + i + '" class="timeCell"></td>';
+                    }
+                    table += "</tr>";
+                }
+                dojo.byId("tBody").innerHTML = table;
+            }
+            
+            var getTime = function(t){
+                var h = Math.floor(t / 2);
+                var m = t % 2 == 0 ? "00" : "30";
+                h = h > 9 ? h : "0" + h;
+                return h + ':' + m;
+            }
+			
+			var save = function(){
+				dojo.forEach(dojo.query('.selected'), function(item, idx, arr){
+					selected.push(item.id);
+				});
+				//dojo.byId("ntf").innerHTML = "Time table saved";
+				//dojo.query("#ntf").addClass("ntf").fadeOut({duration:600}).play();
+			}
+			
+			var clear = function(){
+				dojo.query(".selected").removeClass("selected");
+			}
+			
+			var load = function(){
+				clear();
+				if (selected.length > 0) {
+					dojo.forEach(selected, function(item, idx, arr){
+						dojo.query("#"+item).addClass("selected");
+					});
+				}
+			}
+            
+            dojo.addOnLoad(function(){
+                //YAHOO.tool.Profiler.registerFunction("createCalendar", window);
+                createCalendar();
+               // var report = YAHOO.tool.Profiler.getFullReport();
+                //console.log(report);
+                
+                var mouseDown = false;
+                
+                dojo.query("table").connect("onmousedown", function(e){
+                    // disable default mouse down event for whole table
+                    e.preventDefault();
+                });
+				
+				dojo.query("th").addClass("timeAxis");
+                
+                dojo.query(".timeCell").connect("onmousedown", function(e){
+                    mouseDown = true;
+                    dojo.toggleClass(e.target, "selected");
+                }).connect("onmouseover", function(e){
+                    if (mouseDown) {
+                        dojo.toggleClass(e.target, "selected");
+                    }
+                }).connect("onmouseup", function(e){
+                    mouseDown = false;
+                });
+                
+                dojo.query("#clear").connect("onclick", function(){
+                    clear();
+                });
+				
+				dojo.query("#save").connect("onclick", function(){
+					save();
+				});
+				
+				dojo.query("#load").connect("onclick", function(){
+					load();
+				});
+            });
+			
+			
+        </script>
+    </head>
+    <body>
+        <h1>Demo of TimerPicker</h1>
+        <a id="clear" href="#">Clear</a>
+		<a id="save" href="#">Save</a>
+		<a id="load" href="#">Load</a>
+		<div id="ntf" class="ntf" style="float:left"></div>
+		<div style="clear:both"/>
+        <div class="timeTable">
+		<table>
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Mon</th>
+                    <th>
+                        Tue
+                    </th>
+                    <th>
+                        Wed
+                    </th>
+                    <th>
+                        Thu
+                    </th>
+                    <th>
+                        Fri
+                    </th>
+                    <th>
+                        Sat
+                    </th>
+                    <th>
+                        Sun
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tBody">
+            </tbody>
+        </table>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title>PHP Distributed Session Manager Class</title>
+		<style type="text/css">
+
+			body {
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 85%;
+				margin: 10px;
+			}
+			
+			h1 {
+				font-family: Trebuchet MS, Verdana, Arial, sans-serif;
+				background-color: #eee;
+				padding: 10px;
+				margin: -10px -10px 10px -10px;
+				border-bottom: 1px solid #ccc;
+				color: darkblue;
+			}
+			
+			h2 {
+				font-family: Trebuchet MS, Verdana, Arial, sans-serif;
+				font-weight: normal;
+				color: darkred;
+			}
+			
+			p, div.notice {
+				margin-left: 20px;
+			}
+			
+			div.notice {
+				padding: 10px;
+				border: 1px solid #ccc;
+				background-color: #f8f8f8;
+				color: #666;
+				font-style: italic;
+			}
+
+		</style>
+	</head>
+	<body>
+	
+		<h1>PHP Distributed Session Manager Class</h1>
+	
+		<h2>What is it?</h2>
+		<p>
+			The <b>PHP Distributed Session Manager Class</b> provides a simple but scalable solution
+			for managing session data in a large cluster.<br>
+			<img src="sessions.png"><br>
+			<i>
+			1. Standard PHP sessions on a single webserver<br>
+			2. Sessions stored on a central database server (single point of failure)<br>
+			3. Sessions distributed among many database servers using the Distributed Session Manager Class
+			</i>
+		</p>
+	
+		<h2>Features</h2>
+		<ul>
+			<li>Unlimited amount of simultaneous sessions</li>
+			<li>Uses Linux, Apache, MySQL and PHP only; no <i>memcached</i> or <i>Zend Platform</i> required.</li>
+			<li>Configurable level of redundancy; no data loss when a server crashes.</li>
+		</ul>
+		
+		<h2>Requirements</h2>
+		<ul>
+			<li>Webservers</li>
+			<ul>
+				<li>Apache 1.3.x or better</li>
+				<li>PHP 4.3.x or better</li>
+			</ul>
+			<li>Database servers</li>
+			<ul>
+				<li>MySQL 4.x or better</li>
+			</ul>
+		</ul>
+		
+		<h2>How does it work?</h2>
+		<p>
+			The algorithm behind the class is inspired by a Distributed Hash Table (DHT). The class loads a list
+			of Session Stores (each running a stand-alone instance of MySQL). It then seeds PHP's pseudo randomizer 
+			with the CRC32 hash of the session ID and 'randomly' shuffles the list of Session Stores.
+			Because PHP's randomizer isn't random, but pseudo random, it produces the same 'random' order every time for the same seed.
+		</p>
+		<p>
+			<code>
+				$stores = array( 'store1', 'store2', 'store3', 'store4' );<br>
+				srand( crc32( $session_id ) );<br>
+				shuffle( $stores );
+			</code>
+		</p>
+		<p>
+			<b>Reading session data</b><br>
+			The Session Manager class attempts to connect to each of the Session Stores in order until a connection has been established
+			succesfully. It then fetches the session's data from that Session Store and returns it to the script.
+		</p>
+		<p>
+			<b>Writing session data</b><br>
+			The Session Manager class attempts to connect to each of the Session Stores in order. If a connection has been succesfully established,
+			it writes the data to the connected Session Store. This process is repeated until NUM_COPIES is met.
+		</p>
+
+		<h2>Credits &amp; licensing</h2>
+		<p>
+			The PHP Distributed Session Manager Class is developed by Robin Schuil (<a href="mailto:r.schuil@gmail.com">r.schuil@gmail.com</a>).<br>
+			All code is released under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL licence</a> and were published on the 12 July 2006.
+		</p>
+		
+		<h2>Download</h2>
+		<p>
+			<a href="phpdsm.zip">Click here to download</a> the PHP Distributed Session Manager class source code. Enjoy!
+		</p>
+				
+		<div class="notice">
+			Warning: This product and it's documentation is experimental and still under construction.
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,230 @@
+### PROXY65 README ###
+
+Code Author:   Dave Smith <dizzyd@jabber.org>
+Maintainer:    Fabio Forno <mailto:ff@bluendo.com> <xmpp:ff@jabber.bluendo.com>
+Doc Author:    Peter Saint-Andre <stpeter@jabber.org>
+Doc Version:   1.2.9
+Last Updated:  2008-11-22
+
+
+1. INTRODUCTION
+
+Proxy65 is a server-side component that enables you to add a 
+SOCKS5 bytestreaming service to a standard Jabber server, 
+mainly to be used for out-of-band file transfer. For a full
+definition of the functionality, please read JEP-0065:
+
+   http://www.jabber.org/jeps/jep-0065.html
+
+Proxy65 runs as an "external component": i.e., it uses the 
+over-the-wire API for server-side components documented in 
+JEP-0114. Therefore it should work with most Jabber server 
+implementations and is not limited to the jabberd 1.4 server 
+series.
+
+This README documents version 1.1 of Proxy65.
+
+
+2. SOFTWARE REQUIREMENTS
+
+Proxy65 is written in Python and built on top of the Twisted 
+framework:
+
+  http://www.twistedmatrix.com/
+
+Other dependencies:
+
+  pyOpenSSL http://pyopenssl.sourceforge.net/
+
+At a minimum, you MUST have Python 2.5 and Twisted 8.0 or 
+higher installed in order to run Proxy65; if it doesn't work with
+this configuration ping xmpp:ff@jabber.bluendo.com
+
+3. INSTALLING PROXY65
+
+ *** IMPORTANT NOTE FOR UPGRADES ***
+ If you are upgrading from a previous version of Proxy65 you must delete
+ the proxy65.* files in your twisted/plugins directory before proceeding
+ to the installation
+
+Unzip the Proxy65 code into your preferred directory (it does
+not need to be installed into your Jabber server directory); 
+this will create a proxy65/ subdirectory. Type 'cd proxy65' to 
+move to that directory.
+
+As root or using sudo, type the following at the command line:
+
+  python setup.py install
+
+This will install the Python files you need into your Python
+distribution.
+
+If you want to install Proxy65 somewhere else, refer to:
+
+  http://www.python.org/doc/current/inst/inst.html
+
+
+4. CONFIGURING THE SERVER
+
+Next, update your server configuration. In this README, we cover
+configuration for the jabberd 1.4.x and jabberd 2.x servers, but
+you should be to add the correct configuration to other servers,
+too, as long as they support the Jabber component protocol that is
+specified in JEP-0114: <http://www.jabber.org/jeps/jep-0114.html>
+(refer to the documentation for your server of choice regarding its
+support for this protocol).
+
+4.1 Jabberd 1.4.x
+
+For jabberd 1.4, add an appropriate service line to the <browse> 
+section of your jabber.xml file's JSM config:
+
+  <jsm>
+    <browse>
+      ...
+      <service jid="proxy65.yourhostname.tld" name="SOCKS5 Bytestream Service"/>
+      ...
+    </browse>
+  </jsm>
+
+You do not have to name it "proxy65", it can be anything you'd
+like. However, it MUST be a fully qualified domain name if you
+want people from outside your domain to use it (which is usually
+the point of running a bytestreams service).
+
+Then add an appropriate service definition of the kind you already
+have for groupchat, gateways, JUD, and the like (this does not go
+in the <jsm> section -- refer to the jabberd 1.4 admin guide or 
+README for details):
+
+  <service id="proxy65.yourhostname.tld">
+    <accept>
+      <ip>127.0.0.1</ip>
+      <port>yourcomponentportnumber</port>
+      <secret>yourproxysecret</secret>
+    </accept>
+  </service>
+
+The 'id' SHOULD be the same as the 'jid' you provided above.
+
+If you are behind a NAT, do not provide an IP address; instead,
+the <ip> element needs to be a hostname that you can set in 
+different ways inside and outside the firewalled area. This makes
+it possible for entities inside and outside to access the proxy.
+
+The port number can be anything you like (usually some high port
+not registered with the IANA is a good idea). The port number you 
+provide is the one over which server-to-component communications 
+will occur, not the port used by clients when they connect to the 
+bytestreams service.
+
+The secret can be anything you like. 
+
+4.2 Jabberd 2.x
+
+With jabberd 2.x, you can simply connect to the router's IP 
+address with the "legacy" password that is configured in the
+router.xml file.
+
+5. RUNNING PROXY65
+
+Since version 1.2.0 Proxy65 is directly started as a "Twisted Application 
+Plugin", which is started by using the twistd command. TAP files are no more 
+supported since they are now deprecated.
+
+First check to see that Twisted knows about your application by
+typing the following command:
+
+  twistd
+
+Your application (proxy65) should show up in the output list.
+
+If Proxy65 does not show up, check the python path in the following files and check your Twisted Matrix installation:
+
+  /usr/bin/twistd
+
+Next, type:
+
+  twistd proxy65 --help
+
+You should see some nice help output:
+
+  # twistd proxy65 --help
+  Usage:    twistd [options] proxy65 [command options]
+  Options:
+      --jid=        [default: proxy65]
+      --secret=
+      --rhost=      [default: 127.0.0.1]
+      --rport=      [default: 6000]
+      --proxyips= 
+      --version
+      --help        Display this help and exit.
+
+In order to start Proxy65 just run the 'twistd' command with the appropriate 
+parameters.
+
+The parameters have the following meaning:
+
+  --jid         The JID of your Proxy65 service, just as it is 
+                in your jabber.xml file or other config.
+  --secret      The secret password used between your Jabber
+                server and your Proxy65 component.
+  --rhost       The IP address of your Jabber router (server).
+  --rport       The port over which router-to-component traffic
+                will be sent.
+  --proxyips    The IP addresses and ports used for SOCKS5 
+                communications; you can supply more than one
+                by comma-separating the list. The address must
+                be an IP address (not a hostname) and the port
+                is specified by a colon (":") character and then
+                the port number. (The default port is 7777).
+
+So, type something like this:
+
+  twistd proxy65 --jid=proxy65.yourhostname.tld --secret=yourproxysecret --rhost=yourjabberdip --rport=yourcomponentportnumber --proxyips=defaultnetworkIP:someport
+
+Here is an example:
+ 
+  twistd proxy65 --jid=proxy65.localhost --secret=proxybaby --rhost=127.0.0.1 rport=7013 --proxyips=127.0.0.1:7769
+
+And voila! Proxy65 is running.
+
+
+7. USAGE
+
+At present, the main use for Proxy65 is file transfer between 
+Jabber clients that are advanced enough to support the protocol
+defined in JEP-0096:
+
+   http://www.jabber.org/jeps/jep-0096.html
+
+Note: when specifying the Jabber address of your proxy, you MUST
+NOT include the port number. Jabber entities don't know anything
+about port numbers, and if you specify a port number in your fine
+new proxy's Jabber address, nothing will work and you will be 
+tremendously disappointed.
+
+File transfer is not the only use for Proxy65, although it is the
+only use defined so far. Because Proxy65 is really just a generic 
+bytestreaming proxy, it could be used for other applications (such 
+as voice over IP using a relatively light protocol such as Speex). 
+Look for more creative uses of Proxy65 in the future.
+
+
+8. GETTING HELP
+
+For help with Twisted, type 'man twistd'.
+
+For help with Proxy65, contact either of the addresses listed
+at the top of this README (use Jabber, you'll receive a faster 
+reply!), or join the <jdev@conference.jabber.org> chatroom.
+
+
+9. REQUESTING FEATURES AND REPORTING BUGS
+
+Follow the links at the project homepage:
+
+  http://code.google.com/p/proxy65/
+
+Enjoy!
+

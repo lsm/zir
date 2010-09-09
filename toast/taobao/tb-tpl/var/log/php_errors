@@ -1,0 +1,119 @@
+[26-Nov-2007 03:08:31] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/www/phpcosmos/oo.a.la/tb-tpl/index.php on line 42
+[26-Nov-2007 03:08:31] PHP Stack trace:
+[26-Nov-2007 03:08:31] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:31] PHP Notice:  Undefined variable: viewRenderer in /home/www/phpcosmos/oo.a.la/tb-tpl/index.php on line 107
+[26-Nov-2007 03:08:31] PHP Stack trace:
+[26-Nov-2007 03:08:31] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:31] PHP Catchable fatal error:  Argument 1 passed to Zend_Controller_Action_HelperBroker::addHelper() must be an instance of Zend_Controller_Action_Helper_Abstract, null given, called in /home/www/phpcosmos/oo.a.la/tb-tpl/index.php on line 107 and defined in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php on line 70
+[26-Nov-2007 03:08:31] PHP Stack trace:
+[26-Nov-2007 03:08:31] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:31] PHP   2. Zend_Controller_Action_HelperBroker::addHelper() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:107
+[26-Nov-2007 03:08:31] PHP Fatal error:  Call to a member function getName() on a non-object in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php on line 72
+[26-Nov-2007 03:08:31] PHP Stack trace:
+[26-Nov-2007 03:08:31] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:31] PHP   2. Zend_Controller_Action_HelperBroker::addHelper() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:107
+[26-Nov-2007 03:08:56] PHP Notice:  Undefined variable: viewRenderer in /home/www/phpcosmos/oo.a.la/tb-tpl/index.php on line 107
+[26-Nov-2007 03:08:56] PHP Stack trace:
+[26-Nov-2007 03:08:56] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:56] PHP Catchable fatal error:  Argument 1 passed to Zend_Controller_Action_HelperBroker::addHelper() must be an instance of Zend_Controller_Action_Helper_Abstract, null given, called in /home/www/phpcosmos/oo.a.la/tb-tpl/index.php on line 107 and defined in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php on line 70
+[26-Nov-2007 03:08:56] PHP Stack trace:
+[26-Nov-2007 03:08:56] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:56] PHP   2. Zend_Controller_Action_HelperBroker::addHelper() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:107
+[26-Nov-2007 03:08:56] PHP Fatal error:  Call to a member function getName() on a non-object in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php on line 72
+[26-Nov-2007 03:08:56] PHP Stack trace:
+[26-Nov-2007 03:08:56] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:08:56] PHP   2. Zend_Controller_Action_HelperBroker::addHelper() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:107
+[26-Nov-2007 03:09:14] PHP Fatal error:  Uncaught exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (index)' in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:194
+Stack trace:
+#0 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#2 {main}
+  thrown in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php on line 194
+[26-Nov-2007 03:09:38] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'script 'index/index.phtml' not found in path (/home/www/phpcosmos/oo.a.la/tb-tpl/usr/views/scripts/)' in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php:857
+Stack trace:
+#0 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php(765): Zend_View_Abstract->_script('index/index.pht...')
+#1 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(742): Zend_View_Abstract->render('index/index.pht...')
+#2 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(763): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/index.pht...', NULL)
+#3 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(811): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php(160): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php(504): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php(238): Zend_Controller_Action->dispatch('indexAction')
+#7 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#9 {main}
+  thrown in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php on line 857
+[26-Nov-2007 03:10:14] PHP Fatal error:  Call to a member function setNoRender() on a non-object in /home/www/phpcosmos/oo.a.la/tb-tpl/usr/controllers/IndexController.php on line 9
+[26-Nov-2007 03:10:14] PHP Stack trace:
+[26-Nov-2007 03:10:14] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:10:14] PHP   2. Zend_Controller_Front->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:134
+[26-Nov-2007 03:10:14] PHP   3. Zend_Controller_Dispatcher_Standard->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php:920
+[26-Nov-2007 03:10:14] PHP   4. Zend_Controller_Action->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:238
+[26-Nov-2007 03:10:14] PHP   5. IndexController->indexAction() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php:497
+[26-Nov-2007 03:10:27] PHP Notice:  Undefined property:  IndexController::$helper in /home/www/phpcosmos/oo.a.la/tb-tpl/usr/controllers/IndexController.php on line 9
+[26-Nov-2007 03:10:27] PHP Stack trace:
+[26-Nov-2007 03:10:27] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:10:27] PHP   2. Zend_Controller_Front->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:134
+[26-Nov-2007 03:10:27] PHP   3. Zend_Controller_Dispatcher_Standard->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php:920
+[26-Nov-2007 03:10:27] PHP   4. Zend_Controller_Action->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:238
+[26-Nov-2007 03:10:27] PHP   5. IndexController->indexAction() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php:497
+[26-Nov-2007 03:10:27] PHP Notice:  Trying to get property of non-object in /home/www/phpcosmos/oo.a.la/tb-tpl/usr/controllers/IndexController.php on line 9
+[26-Nov-2007 03:10:27] PHP Stack trace:
+[26-Nov-2007 03:10:27] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:10:27] PHP   2. Zend_Controller_Front->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:134
+[26-Nov-2007 03:10:27] PHP   3. Zend_Controller_Dispatcher_Standard->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php:920
+[26-Nov-2007 03:10:27] PHP   4. Zend_Controller_Action->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:238
+[26-Nov-2007 03:10:27] PHP   5. IndexController->indexAction() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php:497
+[26-Nov-2007 03:10:27] PHP Fatal error:  Call to a member function setNoRender() on a non-object in /home/www/phpcosmos/oo.a.la/tb-tpl/usr/controllers/IndexController.php on line 9
+[26-Nov-2007 03:10:27] PHP Stack trace:
+[26-Nov-2007 03:10:27] PHP   1. {main}() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:0
+[26-Nov-2007 03:10:27] PHP   2. Zend_Controller_Front->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/index.php:134
+[26-Nov-2007 03:10:27] PHP   3. Zend_Controller_Dispatcher_Standard->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php:920
+[26-Nov-2007 03:10:27] PHP   4. Zend_Controller_Action->dispatch() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:238
+[26-Nov-2007 03:10:27] PHP   5. IndexController->indexAction() /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php:497
+[26-Nov-2007 03:26:27] PHP Fatal error:  Uncaught exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (generate)' in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:194
+Stack trace:
+#0 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#2 {main}
+  thrown in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php on line 194
+[26-Nov-2007 03:26:43] PHP Fatal error:  Uncaught exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (generate)' in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php:194
+Stack trace:
+#0 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#2 {main}
+  thrown in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php on line 194
+[26-Nov-2007 03:26:46] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'script 'index/generate.phtml' not found in path (/home/www/phpcosmos/oo.a.la/tb-tpl/usr/views/scripts/)' in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php:857
+Stack trace:
+#0 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php(765): Zend_View_Abstract->_script('index/generate....')
+#1 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(742): Zend_View_Abstract->render('index/generate....')
+#2 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(763): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/generate....', NULL)
+#3 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(811): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php(160): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php(504): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php(238): Zend_Controller_Action->dispatch('generateAction')
+#7 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#9 {main}
+  thrown in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php on line 857
+[26-Nov-2007 03:27:13] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'script 'index/generate.phtml' not found in path (/home/www/phpcosmos/oo.a.la/tb-tpl/usr/views/scripts/)' in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php:857
+Stack trace:
+#0 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php(765): Zend_View_Abstract->_script('index/generate....')
+#1 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(742): Zend_View_Abstract->render('index/generate....')
+#2 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(763): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/generate....', NULL)
+#3 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/Helper/ViewRenderer.php(811): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action/HelperBroker.php(160): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Action.php(504): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Dispatcher/Standard.php(238): Zend_Controller_Action->dispatch('generateAction')
+#7 /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#9 {main}
+  thrown in /home/www/phpcosmos/oo.a.la/tb-tpl/lib/Zend/View/Abstract.php on line 857
+[28-Nov-2007 14:02:33] PHP Fatal error:  Uncaught exception 'Zend_Controller_Action_Exception' with message 'IndexController::generatAction() does not exist and was not trapped in __call()' in /home/www/phpcosmos/zf/library/Zend/Controller/Action.php:480
+Stack trace:
+#0 [internal function]: Zend_Controller_Action->__call('generatAction', Array)
+#1 /home/www/phpcosmos/zf/library/Zend/Controller/Action.php(497): IndexController->generatAction()
+#2 /home/www/phpcosmos/zf/library/Zend/Controller/Dispatcher/Standard.php(238): Zend_Controller_Action->dispatch('generatAction')
+#3 /home/www/phpcosmos/zf/library/Zend/Controller/Front.php(920): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#4 /home/www/phpcosmos/oo.a.la/tb-tpl/index.php(134): Zend_Controller_Front->dispatch()
+#5 {main}
+  thrown in /home/www/phpcosmos/zf/library/Zend/Controller/Action.php on line 480

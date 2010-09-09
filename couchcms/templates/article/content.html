@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="block_content">
+<h1>{{ article.title }}</h1>
+<div class="block_content_info">
+    编辑:{{ article.author }} 来源:{{ article.from }} {{ article.published }}
+</div>
+<hr>
+<div class="block_content_body">
+   {{ article.content }}
+</div>
+</div>
+<div class="block_sublist_right_ad">
+{% autoescape off %}
+{{ ads.right }}
+{% endautoescape %}
+</div>
+<div class="block_sublist_related">
+<div class="block_title">
+    <h3>title of block</h3>
+</div>
+</div>
+<div style="clear:both;">
+</div>
+<div class="block_sublist_related">
+<div class="block_title">
+    <h3>title of block</h3>
+</div>
+</div>
+<div class="block_sublist_related">
+<div class="block_title">
+    <h3>title of block</h3>
+</div>
+</div>
+{% endblock %}

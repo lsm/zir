@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                                <ul class="block_list">
+                                    {% for article in articles %}
+                                    <li>
+                                        <a title="{{ article.title }}" href="{% url article_content article.title, article.id %}">· {{ article.title }}aaaaaaaaaaaaaaaaaaa</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div style="clear:both;">
+                            </div>
+                            <div id="middle-ad">
+                                {% autoescape off %}
+                                {{ ads.middle }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div style="clear:both;">
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+{% endblock %}

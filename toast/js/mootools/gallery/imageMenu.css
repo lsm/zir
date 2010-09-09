@@ -1,0 +1,52 @@
+#kwick {
+	position: relative;
+}
+
+#kwick .kwicks {
+	display: block;
+	height: 200px;
+	margin: 0px;
+}
+
+#kwick li {
+	float: left;
+}
+
+#kwick .kwick {
+	display: block;
+	cursor: pointer;
+	overflow: hidden;
+	height: 200px;
+	width: 131px;
+	background: #fff;
+	border-left: 2px solid #fff;
+}
+
+#kwick .kwick span {
+	display: none;
+}
+
+#kwick .opt1 {
+	background: #ccc url(images/digital_art.png);
+}
+
+#kwick .opt2 {
+	background: #ccc url(images/food.png);
+}
+
+#kwick .opt3 {
+	background: #ccc url(images/people.png);
+}
+
+#kwick .opt4 {
+	background: #ccc url(images/landscape.png);
+}
+
+#kwick .opt5 {
+	background: #ccc url(images/comic.png);
+}
+
+#kwick .opt6 {
+	background: #ccc url(images/illustration.png);
+	border-right: 0;
+}

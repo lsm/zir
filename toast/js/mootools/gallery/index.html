@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title></title>
+
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="imageMenu.css">
+<link rel="stylesheet" type="text/css" media="screen" href="lightbox.css">
+<script type="text/javascript" src="mootools.js"></script>
+<script type="text/javascript" src="lightbox.js"></script>
+<script type="text/javascript" src="imageMenu.js"></script>
+<script type="text/javascript" src="images.js"></script>
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		myMenu = new ImageMenu($$('#kwick .kwick'),{openWidth:320, onClick:openThumbs});
+		$$('.clipper').each(function(item){
+			item.setHTML(imagesStr);
+		});
+		Lightbox.init({descriptions: '.lightboxDesc', showControls: true});
+	});
+</script>
+
+
+
+<style type="text/css">
+<!--
+.style1 {color: #CCFF00}
+.style2 {color: #99FF00}
+-->
+</style>
+</head>
+<body>
+<h1>Gallery</h1>
+<div id="container">
+	<div id="kwick">
+		<ul class="kwicks">
+			<li class="kwick opt1"><span>Landscape</span></li>
+			<li class="kwick opt2"><span>People</span></li>
+			<li class="kwick opt3"><span>Nature</span></li>
+			<li class="kwick opt4"><span>urban</span></li>
+			<li class="kwick opt5"><span>abstract</span></li>
+			<li class="kwick opt6"><span>places</span></li>
+		</ul>
+	</div>
+	
+	<div id="landscape" class="thumbnailContainer">
+	<div class="clipper"></div></div>
+	<div id="people" class="thumbnailContainer">
+	<div class="clipper"></div></div>
+	<div id="nature" class="thumbnailContainer">
+	<div class="clipper"></div></div>
+	<div id="urban" class="thumbnailContainer">	
+	<div class="clipper"></div></div>
+	<div id="abstract" class="thumbnailContainer">	
+	<div class="clipper"></div></div>
+	<div id="places" class="thumbnailContainer">
+	<div class="clipper"></div></div>
+	
+	<div id="footer"></div>
+</div>
+</body>
+</html>

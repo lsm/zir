@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="block_sublist">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                                <div class="block_sublist_intro">
+                                    <div class="block_sublist_intro_img">
+                                    </div>
+                                    <h3><a href="#1">Title of article</a></h3>
+                                    <p>
+                                        CN域名成为全球第一大国家域名。回首不平凡的2008年，国家域名究竟呈现出哪些发展关键节点，又为中国互联网增添了怎样精彩回忆呢...<a href="#2">阅读全部</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="block_sublist_related">
+                                <div class="block_title">
+                                    <h3>title of block</h3>
+                                </div>
+                            </div>
+                            <div class="block_sublist_right_ad">
+                                {% autoescape off %}
+                                {{ ads.right }}
+                                {% endautoescape %}
+                            </div>
+{% endblock %}
